@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindBack.Core", "FindBack.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindBack.Core.Test", "FindBack.Core.Test\FindBack.Core.Test.csproj", "{4D04AA4C-39AE-4266-B0D0-67E806B500CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindBack.Android", "FindBack.Android\FindBack.Android.csproj", "{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,12 @@ Global
 		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
