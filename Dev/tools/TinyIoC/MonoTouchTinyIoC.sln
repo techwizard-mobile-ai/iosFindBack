@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyIoC", "TinyIoC\TinyIoC.csproj", "{19CF08A8-CD09-4786-A0D8-8126B033033A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19CF08A8-CD09-4786-A0D8-8126B033033A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{19CF08A8-CD09-4786-A0D8-8126B033033A}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{19CF08A8-CD09-4786-A0D8-8126B033033A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{19CF08A8-CD09-4786-A0D8-8126B033033A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{19CF08A8-CD09-4786-A0D8-8126B033033A}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{19CF08A8-CD09-4786-A0D8-8126B033033A}.Release|iPhone.Build.0 = Release|Any CPU
+		{19CF08A8-CD09-4786-A0D8-8126B033033A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{19CF08A8-CD09-4786-A0D8-8126B033033A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = TinyIoC\TinyIoC.csproj
+	EndGlobalSection
+EndGlobal
