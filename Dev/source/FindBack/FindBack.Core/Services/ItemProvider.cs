@@ -1,14 +1,14 @@
 ﻿namespace FindBack.Core.Services
 {
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
 
     using FindBack.Core.Model;
 
     public class ItemProvider : IItemProvider
     {
-        public IItem[] GetItems()
+        public ObservableCollection<Item> GetItems()
         {
-            return new IItem[]
+            return new ObservableCollection<Item>
                        {
                            new Item
                                {

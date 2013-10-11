@@ -1,5 +1,8 @@
 ﻿namespace FindBack.Core.ViewModels
 {
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+
     using Cirrious.MvvmCross.ViewModels;
 
     using FindBack.Core.Model;
@@ -9,7 +12,7 @@
     {
         private readonly IItemProvider itemProvider;
 
-        private IItem[] _items;
+        private ObservableCollection<Item> _items;
 		private string _welcomeText;
 
 		public string WelcomeText 
@@ -24,7 +27,7 @@
 				RaisePropertyChanged (() => WelcomeText);
 			}
 		}
-        public IItem[] Items
+        public ObservableCollection<Item> Items
         {
             get
             {

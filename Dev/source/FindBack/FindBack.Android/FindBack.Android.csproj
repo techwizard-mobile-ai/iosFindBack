@@ -115,15 +115,14 @@
     <AndroidResource Include="Resources\Drawable\splash.png" />
     <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
     <AndroidResource Include="Resources\Values\SplashStyle.xml" />
-    <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
+    <AndroidResource Include="Resources\Layout\ItemRow.axml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindBack.Core\FindBack.Core.csproj">
-      <Project>{6F5DB9AB-36C3-4213-9383-530E3FBECE05}</Project>
+      <Project>{6f5db9ab-36c3-4213-9383-530e3fbece05}</Project>
       <Name>FindBack.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.

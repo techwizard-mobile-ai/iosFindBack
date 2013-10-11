@@ -1,11 +1,11 @@
 ﻿namespace FindBack.Core.Services
 {
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
 
     using FindBack.Core.Model;
 
     public interface IItemProvider
     {
-        IItem[] GetItems();
+        ObservableCollection<Item> GetItems();
     }
 }
