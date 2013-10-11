@@ -11,6 +11,8 @@
     <AssemblyName>FindBack.Core.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindBack.Core\FindBack.Core.csproj">
-      <Project>{6f5db9ab-36c3-4213-9383-530e3fbece05}</Project>
+      <Project>{6F5DB9AB-36C3-4213-9383-530E3FBECE05}</Project>
       <Name>FindBack.Core</Name>
     </ProjectReference>
   </ItemGroup>
