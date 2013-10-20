@@ -4,21 +4,33 @@
 
     using Cirrious.CrossCore;
     using Cirrious.MvvmCross.Plugins.Location;
+    using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.ViewModels;
 
     using FindBack.Core.Model;
     using FindBack.Core.Services;
+    using FindBack.Core.Services.Location;
 
     public class AddItemViewModel : MvxViewModel
     {
-        private IMvxGeoLocationWatcher _locationWatcher;
+        private ILocationService _locationService;
+
+        private readonly IMvxMessenger _messenger;
+
+        private readonly MvxSubscriptionToken _token;
+
         private double _longitude;
         private double _latitude;
 
-        public AddItemViewModel(IMvxGeoLocationWatcher locationWatcher)
+        public AddItemViewModel(ILocationService locationService, IMvxMessenger messenger)
         {
-            _locationWatcher = locationWatcher;
-            _locationWatcher.Start(new MvxGeoLocationOptions(), OnLocation, OnLocationError);
+            _token = messenger.Subscribe<LocationMessage>(OnLocationMessage);
+        }
+
+        private void OnLocationMessage(LocationMessage locationMessage)
+        {
+            Latitude = locationMessage.Latitude;
+            Longitude = locationMessage.Longitude;
         }
 
         public double Longitude
@@ -31,17 +43,6 @@
         {
             get { return _latitude; }
             set { _latitude = value; RaisePropertyChanged(() => Latitude); }
-        }
-
-        private void OnLocationError(MvxLocationError error)
-        {
-            Mvx.Error("Error in retrieving location {0}", error.Code);
-        }
-
-        private void OnLocation(MvxGeoLocation location)
-        {
-            Latitude = location.Coordinates.Latitude;
-            Longitude = location.Coordinates.Longitude;
         }
     }
 }

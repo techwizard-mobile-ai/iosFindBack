@@ -1,6 +1,7 @@
 namespace FindBack.Core
 {
     using Cirrious.CrossCore;
+    using Cirrious.CrossCore.IoC;
     using Cirrious.MvvmCross.ViewModels;
 
     using FindBack.Core.Services;
@@ -8,10 +9,15 @@ namespace FindBack.Core
 
     public class App : MvxApplication
     {
-        public App()
+        public override void Initialize()
         {
+            CreatableTypes()
+                .EndingWith("Service")
+                .AsInterfaces()
+                .RegisterAsLazySingleton();
+
             Mvx.RegisterType<IItemProvider, ItemProvider>();
-            Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<ItemsViewModel>());
+            RegisterAppStart<ItemsViewModel>();
         }
     }
 }

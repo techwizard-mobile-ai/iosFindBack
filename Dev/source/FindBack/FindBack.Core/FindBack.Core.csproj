@@ -40,6 +40,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IItemProvider.cs" />
     <Compile Include="Services\ItemProvider.cs" />
+    <Compile Include="Services\Location\ILocationService.cs" />
+    <Compile Include="Services\Location\LocationMessage.cs" />
+    <Compile Include="Services\Location\LocationService.cs" />
     <Compile Include="ViewModels\AddItemViewModel.cs" />
     <Compile Include="ViewModels\ItemsViewModel.cs" />
   </ItemGroup>
