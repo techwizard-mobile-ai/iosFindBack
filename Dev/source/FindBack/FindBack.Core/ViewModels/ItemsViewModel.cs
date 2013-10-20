@@ -1,7 +1,7 @@
 ﻿namespace FindBack.Core.ViewModels
 {
-    using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Windows.Input;
 
     using Cirrious.MvvmCross.ViewModels;
 
@@ -10,23 +10,17 @@
 
     public class ItemsViewModel : MvxViewModel
     {
-        private readonly IItemProvider itemProvider;
+        private readonly IItemProvider _itemProvider;
 
         private ObservableCollection<Item> _items;
-		private string _welcomeText;
 
-		public string WelcomeText 
-		{
-			get 
-			{
-				return _welcomeText;
-			}
-			set 
-			{
-				_welcomeText = value;
-				RaisePropertyChanged (() => WelcomeText);
-			}
-		}
+        private MvxCommand _addItemCommand;
+
+        public ItemsViewModel(IItemProvider itemProvider)
+        {
+            this._itemProvider = itemProvider;
+        }
+
         public ObservableCollection<Item> Items
         {
             get
@@ -36,19 +30,27 @@
             private set
             {
                 _items = value;
-				RaisePropertyChanged (() => Items);
+                RaisePropertyChanged(() => Items);
             }
         }
 
-        public ItemsViewModel(IItemProvider itemProvider)
+        public ICommand AddItemCommand
         {
-            this.itemProvider = itemProvider;
+            get
+            {
+                _addItemCommand = _addItemCommand ?? new MvxCommand(this.GoToAddItem);
+                return _addItemCommand;
+            }
+        }
+
+        private void GoToAddItem()
+        {
+            ShowViewModel<AddItemViewModel>();
         }
 
         public override void Start()
         {
-            Items = itemProvider.GetItems();
-			WelcomeText = "Welcome to FindBack";
+            Items = this._itemProvider.GetItems();
             base.Start();
         }
     }
