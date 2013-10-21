@@ -7,18 +7,19 @@
 
     using FindBack.Core.Model;
     using FindBack.Core.Services;
+    using FindBack.Core.Services.Items;
 
     public class ItemsViewModel : MvxViewModel
     {
-        private readonly IItemProvider _itemProvider;
+        private readonly IItemService itemService;
 
         private ObservableCollection<Item> _items;
 
         private MvxCommand _addItemCommand;
 
-        public ItemsViewModel(IItemProvider itemProvider)
+        public ItemsViewModel(IItemService itemService)
         {
-            this._itemProvider = itemProvider;
+            this.itemService = itemService;
         }
 
         public ObservableCollection<Item> Items
@@ -50,7 +51,7 @@
 
         public override void Start()
         {
-            Items = this._itemProvider.GetItems();
+            Items = this.itemService.GetItems();
             base.Start();
         }
     }
