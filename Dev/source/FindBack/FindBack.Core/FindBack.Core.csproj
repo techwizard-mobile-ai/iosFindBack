@@ -36,14 +36,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Model\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DataStore\IItemStorageService.cs" />
+    <Compile Include="Services\DataStore\Item.cs" />
+    <Compile Include="Services\DataStore\ItemStorageService.cs" />
+    <Compile Include="Services\Items\CollectionChangedMessage.cs" />
     <Compile Include="Services\Items\IItemService.cs" />
     <Compile Include="Services\Items\ItemService.cs" />
     <Compile Include="Services\Location\ILocationService.cs" />
     <Compile Include="Services\Location\LocationMessage.cs" />
     <Compile Include="Services\Location\LocationService.cs" />
     <Compile Include="ViewModels\AddItemViewModel.cs" />
+    <Compile Include="ViewModels\DetailItemViewModel.cs" />
     <Compile Include="ViewModels\ItemsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +59,9 @@
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.13\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.0.13\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Location">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Location.3.0.13\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.Location.dll</HintPath>

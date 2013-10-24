@@ -13,7 +13,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="30dp"
-        local:MvxBind="Text ItemName" />
+        local:MvxBind="Text Item.ItemName" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -23,21 +23,21 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="30dp"
-        local:MvxBind="Text Description" />
-    <Button
+        local:MvxBind="Text Item.Description" />
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Take Picture"
-        local:MvxBind="Click TakePictureCommand" />
-    <Button
+        android:textSize="22dp"
+        android:text="Created:" />
+    <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Choose Picture"
-        local:MvxBind="Click ChoosePictureCommand" />
+        android:textSize="18dp"
+        local:MvxBind="Text Item.ItemCreated" />
     <Mvx.MvxImageView
         android:layout_width="200dp"
         android:layout_height="150dp"
-        local:MvxBind="Bitmap PictureBytes,Converter=InMemoryImage" />
+        local:MvxBind="ImageUrl Item.ImagePath" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -47,15 +47,15 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="18dp"
-        local:MvxBind="Text Latitude" />
+        local:MvxBind="Text Item.Latitude" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="18dp"
-        local:MvxBind="Text Longitude" />
+        local:MvxBind="Text Item.Longitude" />
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Save"
-        local:MvxBind="Click SaveCommand" />
+        android:text="Delete"
+        local:MvxBind="Click DeleteCommand" />
 </LinearLayout>

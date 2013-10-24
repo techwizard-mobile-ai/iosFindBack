@@ -104,13 +104,16 @@ namespace FindBack.Droid
 			public const int AddItemView = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int ItemRow = 2130903041;
+			public const int DetailItemView = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int ItemsView = 2130903042;
+			public const int ItemRow = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int SplashScreen = 2130903043;
+			public const int ItemsView = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int SplashScreen = 2130903044;
 			
 			static Layout()
 			{
@@ -125,11 +128,8 @@ namespace FindBack.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060001
-			public const int ApplicationName = 2131099649;
-			
 			// aapt resource value: 0x7f060000
-			public const int Hello = 2131099648;
+			public const int ApplicationName = 2131099648;
 			
 			static String()
 			{

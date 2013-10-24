@@ -9,9 +9,21 @@
         android:layout_height="wrap_content"
         android:text="Add Item"
         local:MvxBind="Click AddItemCommand" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="Total Count"
+        android:layout_marginRight="150dp" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        local:MvxBind="Text TotalCount"
+        android:layout_marginRight="150dp" />
     <Mvx.MvxListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         local:MvxItemTemplate="@layout/itemrow"
-        local:MvxBind="ItemsSource Items" />
+        local:MvxBind="ItemsSource Items; ItemClick ShowDetailCommand" />
 </LinearLayout>

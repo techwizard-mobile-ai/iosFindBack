@@ -1,13 +1,14 @@
 ﻿namespace FindBack.Core.Services.Items
 {
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
 
-    using FindBack.Core.Model;
+    using FindBack.Core.Services.DataStore;
 
     public interface IItemService
     {
-        ObservableCollection<Item> GetItems();
-        void Insert(Item item);
+        List<Item> GetItems();
+        Item GetItem(int id);
+        void Add(Item item);
         void Update(Item item);
         void Delete(Item item);
         int Count { get; }

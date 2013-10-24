@@ -5,6 +5,10 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:padding="20dp">
+    <Mvx.MvxImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        local:MvxBind="ImageUrl ImagePath" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -23,5 +27,17 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dip"
         android:paddingBottom="10dip"
-        local:MvxBind="Text Coordinates" />
+        local:MvxBind="Text ItemCreated" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        local:MvxBind="Text Latitude" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        local:MvxBind="Text Longitude" />
 </LinearLayout>

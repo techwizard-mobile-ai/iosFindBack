@@ -1,70 +1,85 @@
 ﻿namespace FindBack.Core.Services.Items
 {
-    using System.Collections.ObjectModel;
-    using System.Linq;
+    using System.Collections.Generic;
 
-    using Cirrious.MvvmCross.Plugins.Sqlite;
+    using Cirrious.MvvmCross.Plugins.Messenger;
 
-    using FindBack.Core.Model;
+    using FindBack.Core.Services.DataStore;
 
     public class ItemService : IItemService
     {
-        private readonly ISQLiteConnection _connection;
+        private readonly IItemStorageService _itemStorageService;
+        private readonly IMvxMessenger _messenger;
 
-        public ItemService(ISQLiteConnectionFactory factory)
+        public ItemService(IItemStorageService itemStorageService, IMvxMessenger messenger)
         {
-            _connection = factory.Create("findback.sql");
-            _connection.CreateTable<Item>();
+            this._itemStorageService = itemStorageService;
+            this._messenger = messenger;
         }
 
-        public ObservableCollection<Item> GetItems()
+        public List<Item> GetItems()
         {
             if (Count == 0)
             {
                 InitializeWithItems();
             }
 
-            return new ObservableCollection<Item>(this._connection.Table<Item>().ToList());
+            return this._itemStorageService.All();
+        }
+
+        public Item GetItem(int id)
+        {
+            return this._itemStorageService.Get(id);
         }
 
         private void InitializeWithItems()
         {
             var item1 = new Item
                             {
-                                Coordinates = "47.063762;8.311063",
+                                Latitude = 47.063762,
+                                Longitude = 8.311063,
                                 Description = "Bike at work.",
                                 ItemName = "CityBike Speedy"
                             };
             var item2 = new Item
                              {
-                                 Coordinates = "47.030233;8.277813",
+                                 Latitude = 47.030233,
+                                 Longitude = 8.277813,
                                  Description = "Bike at Pilatus cable car station.",
                                  ItemName = "MountainBike Rocky"
                              };
 
-            this.Insert(item1);
-            this.Insert(item2);
+            this.Add(item1);
+            this.Add(item2);
         }
 
-        public void Insert(Item item)
+        public void Add(Item item)
         {
-            _connection.Insert(item);
+            this._itemStorageService.Add(item);
+            this.PublishCollectionUpdate();
         }
 
         public void Update(Item item)
         {
-            _connection.Update(item);
+            this._itemStorageService.Update(item);
+            this.PublishCollectionUpdate();
         }
 
         public void Delete(Item item)
         {
-            _connection.Delete(item);
+            this._itemStorageService.Delete(item);
+            this.PublishCollectionUpdate();
+        }
+
+        private void PublishCollectionUpdate()
+        {
+            this._messenger.Publish(new CollectionChangedMessage(this));
         }
 
         public int Count {
             get
             {
-                return _connection.Table<Item>().Count();
+                return _itemStorageService.Count;
             }
         }
     }
