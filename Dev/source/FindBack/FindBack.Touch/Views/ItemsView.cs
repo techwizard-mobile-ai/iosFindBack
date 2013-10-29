@@ -5,7 +5,9 @@ using MonoTouch.UIKit;
 
 namespace FindBack.Touch
 {
-	public partial class ItemsView : UIViewController
+    using Cirrious.MvvmCross.Touch.Views;
+
+    public partial class ItemsView : MvxViewController
 	{
 		public ItemsView () : base ("ItemsView", null)
 		{
