@@ -90,9 +90,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
     <Compile Include="Views\ItemsView.cs" />
-    <Compile Include="Views\ItemsView.designer.cs">
-      <DependentUpon>ItemsView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\AddItemView.cs" />
     <Compile Include="Views\AddItemView.designer.cs">
       <DependentUpon>AddItemView.cs</DependentUpon>
@@ -171,7 +168,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
-    <InterfaceDefinition Include="Views\ItemsView.xib" />
     <InterfaceDefinition Include="Views\AddItemView.xib" />
   </ItemGroup>
 </Project>

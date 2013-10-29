@@ -7,7 +7,7 @@
 using MonoTouch.Foundation;
 using System.CodeDom.Compiler;
 
-namespace FindBack.Touch
+namespace FindBack.Touch.Views
 {
 	[Register ("AddItemView")]
 	partial class AddItemView
