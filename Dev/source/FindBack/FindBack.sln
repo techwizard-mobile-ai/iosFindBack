@@ -1,37 +1,75 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindBack.Core", "FindBack.Core\FindBack.Core.csproj", "{6F5DB9AB-36C3-4213-9383-530E3FBECE05}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindBack.Core.Test", "FindBack.Core.Test\FindBack.Core.Test.csproj", "{4D04AA4C-39AE-4266-B0D0-67E806B500CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindBack.Droid", "FindBack.Droid\FindBack.Droid.csproj", "{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindBack.Phone", "FindBack.Phone\FindBack.Phone.csproj", "{FE14CFAC-2930-42C8-8070-E8BE69426A1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Release|ARM.ActiveCfg = Release|Any CPU
+		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Release|x86.ActiveCfg = Release|Any CPU
 		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Release|ARM.ActiveCfg = Release|Any CPU
+		{4D04AA4C-39AE-4266-B0D0-67E806B500CC}.Release|x86.ActiveCfg = Release|Any CPU
 		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F5DB9AB-36C3-4213-9383-530E3FBECE05}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = FindBack.Droid\FindBack.Droid.csproj
+		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Release|ARM.ActiveCfg = Release|Any CPU
+		{4FC3AD8C-FCD7-40A4-BAF9-CFC4D4E786FD}.Release|x86.ActiveCfg = Release|Any CPU
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Debug|ARM.Build.0 = Debug|ARM
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Debug|ARM.Deploy.0 = Debug|ARM
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Debug|x86.ActiveCfg = Debug|x86
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Debug|x86.Build.0 = Debug|x86
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Debug|x86.Deploy.0 = Debug|x86
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Release|ARM.ActiveCfg = Release|ARM
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Release|ARM.Build.0 = Release|ARM
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Release|ARM.Deploy.0 = Release|ARM
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Release|x86.ActiveCfg = Release|x86
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Release|x86.Build.0 = Release|x86
+		{FE14CFAC-2930-42C8-8070-E8BE69426A1A}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = FindBack.Droid\FindBack.Droid.csproj
 	EndGlobalSection
 EndGlobal

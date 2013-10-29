@@ -14,7 +14,7 @@
 
     public class AddItemViewModel : MvxViewModel
     {
-        private ILocationService _locationService;
+        private readonly ILocationService _locationService;
         private readonly IMvxPictureChooserTask _pictureChooserTask;
 
         private readonly IItemService _itemService;
@@ -24,6 +24,7 @@
 
         private double _longitude;
         private double _latitude;
+        private bool _locationKnown;
         private string _itemName;
         private string _description;
         private byte[] pictureBytes;
@@ -32,12 +33,14 @@
         private MvxCommand _takePictureCommand;
         private MvxCommand _saveCommand;
 
-        public AddItemViewModel(IMvxMessenger messenger, IMvxPictureChooserTask pictureChooserTask, IItemService itemService, IMvxFileStore fileStore)
+        public AddItemViewModel(ILocationService locationService, IMvxMessenger messenger, IMvxPictureChooserTask pictureChooserTask, IItemService itemService, IMvxFileStore fileStore)
         {
-            _token = messenger.SubscribeOnMainThread<LocationMessage>(OnLocationMessage);
+            _locationService = locationService;
             _pictureChooserTask = pictureChooserTask;
             _itemService = itemService;
             this._fileStore = fileStore;
+            _token = messenger.SubscribeOnMainThread<LocationMessage>(OnLocationMessage);
+            GetInitialLocation();
         }
 
         public byte[] PictureBytes
@@ -56,6 +59,12 @@
         {
             get { return this._latitude; }
             set { this._latitude = value; RaisePropertyChanged(() => Latitude); }
+        }
+
+        public bool LocationKnown
+        {
+            get { return _locationKnown; }
+            set { _locationKnown = value; RaisePropertyChanged(() => LocationKnown); }
         }
 
         public string ItemName
@@ -94,6 +103,17 @@
             {
                 _choosePictureCommand = _choosePictureCommand ?? new MvxCommand(DoChoosePicture);
                 return _choosePictureCommand;
+            }
+        }
+
+        private void GetInitialLocation()
+        {
+            double lat, lng;
+            if (_locationService.TryGetLatestLocation(out lat, out lng))
+            {
+                LocationKnown = true;
+                Latitude = lat;
+                Longitude = lng;
             }
         }
 

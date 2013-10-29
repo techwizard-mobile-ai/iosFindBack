@@ -6,15 +6,16 @@
 
     public class LocationService : ILocationService
     {
-        private readonly IMvxGeoLocationWatcher _locationWatcher;
-
+        private readonly IMvxLocationWatcher _locationWatcher;
         private readonly IMvxMessenger _messenger;
+        private readonly object _lockObject = new object();
+        private MvxGeoLocation _latestLocation;
 
-        public LocationService(IMvxGeoLocationWatcher locationWatcher, IMvxMessenger messenger)
+        public LocationService(IMvxLocationWatcher locationWatcher, IMvxMessenger messenger)
         {
             this._locationWatcher = locationWatcher;
             this._messenger = messenger;
-            this._locationWatcher.Start(new MvxGeoLocationOptions(), this.OnLocation, this.OnLocationError);
+            this._locationWatcher.Start(new MvxLocationOptions(), this.OnLocation, this.OnLocationError);
         }
 
         private void OnLocationError(MvxLocationError error)
@@ -24,11 +25,32 @@
 
         private void OnLocation(MvxGeoLocation location)
         {
-            var message = new LocationMessage(
-                this, 
-                location.Coordinates.Latitude,
-                location.Coordinates.Longitude);
-            this._messenger.Publish(message);
+            lock (_lockObject)
+            {
+                _latestLocation = location;
+            }
+
+            var message = new LocationMessage(this,
+                                location.Coordinates.Latitude,
+                                location.Coordinates.Longitude);
+
+            _messenger.Publish(message);
+        }
+
+        public bool TryGetLatestLocation(out double lat, out double lng)
+        {
+            lock (_lockObject)
+            {
+                if (_latestLocation == null)
+                {
+                    lat = lng = 0;
+                    return false;
+                }
+
+                lat = _latestLocation.Coordinates.Latitude;
+                lng = _latestLocation.Coordinates.Longitude;
+                return true;
+            }
         }
     }
 }
