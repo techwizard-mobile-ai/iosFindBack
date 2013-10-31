@@ -19,21 +19,19 @@ namespace FindBack.Touch.Views
 		MonoTouch.UIKit.UIImageView ItemImage { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UITextField ItemNameText { get; set; }
+		MonoTouch.UIKit.UITextField ItemText { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel PositionLabel { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton SaveButton { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UIButton TakePictureButton { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (ItemNameText != null) {
-				ItemNameText.Dispose ();
-				ItemNameText = null;
-			}
-
 			if (DescriptionText != null) {
 				DescriptionText.Dispose ();
 				DescriptionText = null;
@@ -44,14 +42,24 @@ namespace FindBack.Touch.Views
 				ItemImage = null;
 			}
 
-			if (TakePictureButton != null) {
-				TakePictureButton.Dispose ();
-				TakePictureButton = null;
+			if (ItemText != null) {
+				ItemText.Dispose ();
+				ItemText = null;
 			}
 
 			if (PositionLabel != null) {
 				PositionLabel.Dispose ();
 				PositionLabel = null;
+			}
+
+			if (TakePictureButton != null) {
+				TakePictureButton.Dispose ();
+				TakePictureButton = null;
+			}
+
+			if (SaveButton != null) {
+				SaveButton.Dispose ();
+				SaveButton = null;
 			}
 		}
 	}

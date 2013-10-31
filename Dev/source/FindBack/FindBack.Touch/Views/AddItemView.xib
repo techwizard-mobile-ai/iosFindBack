@@ -8,8 +8,9 @@
             <connections>
                 <outlet property="DescriptionText" destination="jqh-aN-pST" id="WGp-0U-jAN"/>
                 <outlet property="ItemImage" destination="Xmh-ZE-s4B" id="bD7-R6-OgF"/>
-                <outlet property="ItemNameText" destination="3RX-ou-EiY" id="Wam-4v-NcL"/>
+                <outlet property="ItemText" destination="3RX-ou-EiY" id="edT-mx-VCr"/>
                 <outlet property="PositionLabel" destination="yeY-mr-0Je" id="u4Z-JP-ak8"/>
+                <outlet property="SaveButton" destination="5g8-nY-72U" id="45t-Uc-tem"/>
                 <outlet property="TakePictureButton" destination="chl-dH-tDc" id="cGK-wF-mFh"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -49,9 +50,6 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <action selector="ItemNameText:" destination="-1" eventType="editingDidEnd" id="jyl-5s-01D"/>
-                    </connections>
                 </textField>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jqh-aN-pST">
                     <rect key="frame" x="20" y="116" width="280" height="78"/>
@@ -76,9 +74,13 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="chl-dH-tDc">
                     <rect key="frame" x="254" y="258" width="46" height="73"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal">
-                        <string key="title">Take 
-Picture</string>
+                    <state key="normal" title="Pic"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5g8-nY-72U">
+                    <rect key="frame" x="247" y="404" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Save">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
             </subviews>

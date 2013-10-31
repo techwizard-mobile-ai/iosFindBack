@@ -5,50 +5,46 @@ using MonoTouch.UIKit;
 
 namespace FindBack.Touch.Views
 {
-    using System.Collections.Generic;
+	using System.Collections.Generic;
+	using Cirrious.MvvmCross.Binding.BindingContext;
+	using Cirrious.MvvmCross.Binding.Bindings;
+	using Cirrious.MvvmCross.Binding.Touch.Views;
+	using Cirrious.MvvmCross.Touch.Views;
+	using FindBack.Core.ViewModels;
+	using FindBack.Touch.Views;
 
-    using Cirrious.MvvmCross.Binding.BindingContext;
-    using Cirrious.MvvmCross.Binding.Bindings;
-    using Cirrious.MvvmCross.Binding.Touch.Views;
-    using Cirrious.MvvmCross.Touch.Views;
+	[Register ("ItemsView")]
+	public partial class ItemsView : MvxTableViewController
+	{
+		public override void ViewDidLoad ()
+		{
+			// View = new UIView(){ BackgroundColor = UIColor.White};
+			base.ViewDidLoad ();
 
-    using FindBack.Core.ViewModels;
-    using FindBack.Touch.Views;
+			// ios7 layout
+			//if (RespondsToSelector(new Selector("edgesForExtendedLayout")))
+			//   EdgesForExtendedLayout = UIRectEdge.None;
 
-    [Register("ItemsView")]
-    public partial class ItemsView : MvxTableViewController
-    {
-        public override void ViewDidLoad()
-        {
-            // View = new UIView(){ BackgroundColor = UIColor.White};
-            base.ViewDidLoad();
+			var s = new UIBarButtonItem () {
+				Title = "Add item"
+			};
 
-            // ios7 layout
-            //if (RespondsToSelector(new Selector("edgesForExtendedLayout")))
-            //   EdgesForExtendedLayout = UIRectEdge.None;
+			NavigationItem.SetRightBarButtonItem (s, false);
 
-            var s = new UIBarButtonItem()
-            {
-                Title = "Add item"
-            };
+			NavigationItem.Title = "Find Back";
 
-            NavigationItem.SetRightBarButtonItem(s, false);
+			var source = new MvxStandardTableViewSource (TableView, "TitleText ItemName");
+			TableView.Source = source;
 
-            NavigationItem.Title = "Find Back";
+			var set = this.CreateBindingSet<ItemsView, ItemsViewModel> ();
+			set.Bind (source).To (vm => vm.Items);
+			//set.Bind(s.Clicked).To(vm => vm.AddItemCommand);
+			set.Apply ();
 
-            var source = new MvxStandardTableViewSource(TableView, "ItemName");
-            TableView.Source = source;
+			//this.AddBinding(s, new MvxBindingDescription("",));
 
-            var set = this.CreateBindingSet<ItemsView, ItemsViewModel>();
-            set.Bind(source).To(vm => vm.Items);
-            //set.Bind(s.Clicked).To(vm => vm.AddItemCommand);
-            set.Apply();
-
-            //this.AddBinding(s, new MvxBindingDescription("",));
-
-            this.AddBindings(new Dictionary<object, string>()
-            {
-                { s, "Clicked AddItemCommand" },
+			this.AddBindings (new Dictionary<object, string> () {
+				{ s, "Clicked AddItemCommand" },
             });
     
             
