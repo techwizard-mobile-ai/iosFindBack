@@ -1,4 +1,6 @@
-﻿namespace FindBack.Core.Services.Items
+﻿using System;
+
+namespace FindBack.Core.Services.Items
 {
     using System.Collections.Generic;
 
@@ -19,10 +21,10 @@
 
         public List<Item> GetItems()
         {
-            if (Count == 0)
-            {
-                InitializeWithItems();
-            }
+            //if (Count == 0)
+            //{
+            //    InitializeWithItems();
+            //}
 
             return this._itemStorageService.All();
         }
@@ -39,14 +41,16 @@
                                 Latitude = 47.063762,
                                 Longitude = 8.311063,
                                 Description = "Bike at work.",
-                                ItemName = "CityBike Speedy"
+                                ItemName = "CityBike Speedy",
+                                ItemCreated = DateTime.Now
                             };
             var item2 = new Item
                              {
                                  Latitude = 47.030233,
                                  Longitude = 8.277813,
                                  Description = "Bike at Pilatus cable car station.",
-                                 ItemName = "MountainBike Rocky"
+                                 ItemName = "MountainBike Rocky",
+                                 ItemCreated = DateTime.Now
                              };
 
             this.Add(item1);

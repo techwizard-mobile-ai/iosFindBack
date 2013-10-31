@@ -11,6 +11,7 @@
         <local:LocalizedStrings xmlns:local="clr-namespace:FindBack.Phone" x:Key="LocalizedStrings"/>
         <valueConverters:NativeInMemoryImageValueConverter x:Key="BytesToImage" />
         <valueConverters:FilePathToImageConverter x:Key="FilePathToImage" />
+        <valueConverters:NativeItemLocationValueConverter x:Key="ItemLocation" />
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

@@ -47,12 +47,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="18dp"
-        local:MvxBind="Text Item.Latitude" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        local:MvxBind="Text Item.Longitude" />
+        local:MvxBind="Text Item,Converter=ItemLocation" />
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

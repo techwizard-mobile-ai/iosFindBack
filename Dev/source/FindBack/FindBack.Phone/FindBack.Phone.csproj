@@ -112,6 +112,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="ValueConverters\FilePathToImageConverter.cs" />
     <Compile Include="ValueConverters\NativeInMemoryImageValueConverter.cs" />
+    <Compile Include="ValueConverters\NativeItemLocationValueConverter.cs" />
     <Compile Include="Views\AddItemView.xaml.cs">
       <DependentUpon>AddItemView.xaml</DependentUpon>
     </Compile>
