@@ -1,6 +1,6 @@
 using Cirrious.CrossCore.Plugins;
 
-namespace $rootnamespace$.Bootstrap
+namespace FindBack.Touch.Bootstrap
 {
     public class DownloadCachePluginBootstrap
         : MvxLoaderPluginBootstrapAction<Cirrious.MvvmCross.Plugins.DownloadCache.PluginLoader, Cirrious.MvvmCross.Plugins.DownloadCache.Touch.Plugin>

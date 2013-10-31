@@ -33,7 +33,7 @@ namespace FindBack.Touch.Views
 
 			NavigationItem.Title = "Find Back";
 
-			var source = new MvxStandardTableViewSource (TableView, "TitleText ItemName");
+            var source = new MvxStandardTableViewSource(TableView, "TitleText ItemName;ImageUrl ImagePath");
 			TableView.Source = source;
 
 			var set = this.CreateBindingSet<ItemsView, ItemsViewModel> ();
