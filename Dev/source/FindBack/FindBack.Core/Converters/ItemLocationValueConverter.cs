@@ -10,10 +10,15 @@ namespace FindBack.Core.Converters
     {
         protected override string Convert(Item value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value.Latitude == 0 && value.Longitude == 0)
-                return "unknown";
+            var latitude = value.Latitude.ToCoordinate();
+            var longitude = value.Longitude.ToCoordinate();
 
-            return string.Format("{0:0.0000}, {1:0.0000}", value.Latitude, value.Longitude);
+            if (latitude == null || longitude == null)
+            {
+                return "unknown";
+            }
+
+            return latitude.ToLatitude() + "   " + longitude.ToLongitude();
         }
     }
 }

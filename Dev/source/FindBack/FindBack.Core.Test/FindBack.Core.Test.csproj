@@ -32,6 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cirrious.CrossCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.13\lib\net45\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Wpf">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.13\lib\net45\Cirrious.CrossCore.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.13\lib\net45\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
     <Reference Include="FakeItEasy">
       <HintPath>..\packages\FakeItEasy.1.13.1\lib\net40\FakeItEasy.dll</HintPath>
     </Reference>
@@ -50,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\CoordinateConversionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
