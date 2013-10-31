@@ -13,6 +13,9 @@ namespace FindBack.Touch.Views
 	partial class AddItemView
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton ChoosePictureButton { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UITextView DescriptionText { get; set; }
 
 		[Outlet]
@@ -23,9 +26,6 @@ namespace FindBack.Touch.Views
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel PositionLabel { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UIButton SaveButton { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UIButton TakePictureButton { get; set; }
@@ -52,14 +52,14 @@ namespace FindBack.Touch.Views
 				PositionLabel = null;
 			}
 
+			if (ChoosePictureButton != null) {
+				ChoosePictureButton.Dispose ();
+				ChoosePictureButton = null;
+			}
+
 			if (TakePictureButton != null) {
 				TakePictureButton.Dispose ();
 				TakePictureButton = null;
-			}
-
-			if (SaveButton != null) {
-				SaveButton.Dispose ();
-				SaveButton = null;
 			}
 		}
 	}
