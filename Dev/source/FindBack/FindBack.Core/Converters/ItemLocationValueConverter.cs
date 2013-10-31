@@ -6,9 +6,9 @@ using FindBack.Core.Services.DataStore;
 namespace FindBack.Core.Converters
 {
     public class ItemLocationValueConverter
-        : MvxValueConverter<Item>
+        : MvxValueConverter<Item, string>
     {
-        protected override object Convert(Item value, Type targetType, object parameter, CultureInfo culture)
+        protected override string Convert(Item value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value.Latitude == 0 && value.Longitude == 0)
                 return "unknown";
