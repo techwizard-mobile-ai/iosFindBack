@@ -37,13 +37,13 @@
             _messenger.Publish(message);
         }
 
-        public bool TryGetLatestLocation(out double lat, out double lng)
+        public bool TryGetLatestLocation(out double? lat, out double? lng)
         {
             lock (_lockObject)
             {
                 if (_latestLocation == null)
                 {
-                    lat = lng = 0;
+                    lat = lng = null;
                     return false;
                 }
 

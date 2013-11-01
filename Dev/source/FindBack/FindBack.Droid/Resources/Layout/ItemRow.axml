@@ -12,32 +12,14 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dip"
-        android:paddingBottom="10dip"
         android:textAppearance="?android:attr/textAppearanceLarge"
         local:MvxBind="Text ItemName" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dip"
-        android:paddingBottom="10dip"
         local:MvxBind="Text Description" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dip"
-        android:paddingBottom="10dip"
         local:MvxBind="Text ItemCreated" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dip"
-        android:paddingBottom="10dip"
-        local:MvxBind="Text Latitude" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dip"
-        android:paddingBottom="10dip"
-        local:MvxBind="Text Longitude" />
 </LinearLayout>

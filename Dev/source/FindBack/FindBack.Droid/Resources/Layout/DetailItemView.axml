@@ -7,50 +7,56 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:textSize="22dp"
         android:text="Item name:" />
-    <EditText
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="22dp"
         local:MvxBind="Text Item.ItemName" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="22dp"
+        android:textStyle="bold"
         android:text="Description:" />
-    <EditText
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="22dp"
         local:MvxBind="Text Item.Description" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="22dp"
+        android:textStyle="bold"
         android:text="Created:" />
-    <EditText
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="22dp"
         local:MvxBind="Text Item.ItemCreated" />
     <Mvx.MvxImageView
-        android:layout_width="200dp"
-        android:layout_height="150dp"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
         local:MvxBind="ImageUrl Item.ImagePath" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="22dp"
+        android:textStyle="bold"
         android:text="Position:" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
+        android:textSize="20dp"
         local:MvxBind="Text Item,Converter=ItemLocation" />
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_action_discard"
         android:text="Delete"
-        local:MvxBind="Click DeleteCommand" />
+        local:MvxBind="Click DeleteCommand"
+        android:gravity="left|center_vertical" />
 </LinearLayout>

@@ -2,6 +2,6 @@
 {
     public interface ILocationService
     {
-        bool TryGetLatestLocation(out double lat, out double lng);
+        bool TryGetLatestLocation(out double? lat, out double? lng);
     }
 }

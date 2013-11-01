@@ -21,10 +21,10 @@ namespace FindBack.Core.Services.Items
 
         public List<Item> GetItems()
         {
-            //if (Count == 0)
-            //{
-            //    InitializeWithItems();
-            //}
+            if (Count == 0)
+            {
+                InitializeWithItems();
+            }
 
             return this._itemStorageService.All();
         }

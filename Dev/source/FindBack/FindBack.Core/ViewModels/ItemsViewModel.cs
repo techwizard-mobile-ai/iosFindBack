@@ -79,13 +79,6 @@
             ShowViewModel<AddItemViewModel>();
         }
 
-        //public override void Start()
-        //{
-        //    Items = this._itemService.GetItems();
-        //    RefreshDataCount();
-        //    base.Start();
-        //}
-
         private void RefreshDataCount()
         {
             TotalCount = this._itemService.Count;

@@ -22,8 +22,8 @@
         private readonly IMvxMessenger _messenger;
         private readonly MvxSubscriptionToken _token;
 
-        private double _longitude;
-        private double _latitude;
+        private double? _longitude;
+        private double? _latitude;
         private bool _locationKnown;
         private string _itemName;
         private string _description;
@@ -49,13 +49,13 @@
             set { this.pictureBytes = value; RaisePropertyChanged(() => this.PictureBytes); }
         }
 
-        public double Longitude
+        public double? Longitude
         {
             get { return this._longitude; }
             set { this._longitude = value; RaisePropertyChanged(() => Longitude); }
         }
 
-        public double Latitude
+        public double? Latitude
         {
             get { return this._latitude; }
             set { this._latitude = value; RaisePropertyChanged(() => Latitude); }
@@ -108,7 +108,8 @@
 
         private void GetInitialLocation()
         {
-            double lat, lng;
+            double? lat = null;
+            double? lng = null;
             if (_locationService.TryGetLatestLocation(out lat, out lng))
             {
                 LocationKnown = true;

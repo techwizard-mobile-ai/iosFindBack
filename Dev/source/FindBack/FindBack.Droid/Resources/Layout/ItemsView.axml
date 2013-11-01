@@ -7,8 +7,10 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_action_new"
         android:text="Add Item"
-        local:MvxBind="Click AddItemCommand" />
+        local:MvxBind="Click AddItemCommand"
+        android:gravity="left|center_vertical" />
     <Mvx.MvxListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
