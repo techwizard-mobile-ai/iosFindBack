@@ -1,12 +1,11 @@
 ﻿using FindBack.Core.Converters;
-using FindBack.Core.Services.DataStore;
 using FluentAssertions;
 using NUnit.Framework;
 
 namespace FindBack.Core.Test.Converters
 {
     [TestFixture]
-    public class CoordinateConversionTest
+    public class DoubleToGeoCoordinateConversionTest
     {
         [TestCase(47.063762, false, 47, 3, 49, 543)]
         [TestCase(-123.455435, true, 123, 27, 19, 565)]
@@ -16,7 +15,7 @@ namespace FindBack.Core.Test.Converters
         [TestCase(-0.0001, true, 0, 0, 0, 360)]
         public void WhenGivenDecimalPosition_ShouldConvertToDegMinSecPosition(double? coordinate, bool isNegative, int degrees, int minutes, int seconds, int millisecs)
         {
-            GeoCoordinate result = coordinate.ToCoordinate();
+            GeoCoordinate result = GeoCoordinate.FromDouble(coordinate);
 
             result.IsNegative.Should().Be(isNegative);
             result.Degrees.Should().Be(degrees);
@@ -30,7 +29,7 @@ namespace FindBack.Core.Test.Converters
         [TestCase(null)]
         public void WhenGivenOutOfRangeDecimalPosition_ShouldReturnNull(double? coordinate)
         {
-            GeoCoordinate result = coordinate.ToCoordinate();
+            GeoCoordinate result = GeoCoordinate.FromDouble(coordinate);
 
             result.Should().BeNull();
         }

@@ -41,9 +41,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Converters\CoordinateConversion.cs" />
     <Compile Include="Converters\GeoCoordinate.cs" />
-    <Compile Include="Converters\ItemLocationValueConverter.cs" />
+    <Compile Include="Converters\LongitudeCoordinateConverter.cs" />
+    <Compile Include="Converters\LatitudeCoordinateConverter.cs" />
+    <Compile Include="Converters\ItemLocationConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DataStore\IItemStorageService.cs" />
     <Compile Include="Services\DataStore\Item.cs" />

@@ -34,5 +34,31 @@ namespace FindBack.Core.Converters
 
             return result;
         }
+
+        public string ToLatitude()
+        {
+            return string.Format(
+                "{0} {1}",
+                this.ToDegMinSec(),
+                this.IsNegative ? 'S' : 'N');
+        }
+
+        public string ToLongitude()
+        {
+            return string.Format(
+                "{0} {1}",
+                this.ToDegMinSec(),
+                this.IsNegative ? 'W' : 'E');
+        }
+
+        private string ToDegMinSec()
+        {
+            return string.Format(
+                "{0}° {1:00}' {2:00}\".{3:000}",
+                this.Degrees,
+                this.Minutes,
+                this.Seconds,
+                this.Milliseconds);
+        }
     }
 }

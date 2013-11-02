@@ -50,8 +50,13 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        local:MvxBind="Text Item,Converter=ItemLocation" />
+        android:textSize="18dp"
+        local:MvxBind="Text Latitude, Converter=LatitudeCoordinate" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        local:MvxBind="Text Longitude, Converter=LongitudeCoordinate" />
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

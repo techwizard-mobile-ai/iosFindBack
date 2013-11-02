@@ -4,7 +4,7 @@
 
     public class LocationMessage : MvxMessage
     {
-        public LocationMessage(object sender, double longitude, double latitude) : base(sender)
+        public LocationMessage(object sender, double latitude, double longitude) : base(sender)
         {
             this.Latitude = latitude;
             this.Longitude = longitude;

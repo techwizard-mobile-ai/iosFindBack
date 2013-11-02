@@ -23,7 +23,7 @@ namespace FindBack.Core.Services.Items
         {
             if (Count == 0)
             {
-                InitializeWithItems();
+                //InitializeWithItems();
             }
 
             return this._itemStorageService.All();
@@ -34,28 +34,28 @@ namespace FindBack.Core.Services.Items
             return this._itemStorageService.Get(id);
         }
 
-        private void InitializeWithItems()
-        {
-            var item1 = new Item
-                            {
-                                Latitude = 47.063762,
-                                Longitude = 8.311063,
-                                Description = "Bike at work.",
-                                ItemName = "CityBike Speedy",
-                                ItemCreated = DateTime.Now
-                            };
-            var item2 = new Item
-                             {
-                                 Latitude = 47.030233,
-                                 Longitude = 8.277813,
-                                 Description = "Bike at Pilatus cable car station.",
-                                 ItemName = "MountainBike Rocky",
-                                 ItemCreated = DateTime.Now
-                             };
+        //private void InitializeWithItems()
+        //{
+        //    var item1 = new Item
+        //                    {
+        //                        Latitude = 47.063762,
+        //                        Longitude = 8.311063,
+        //                        Description = "Bike at work.",
+        //                        ItemName = "CityBike Speedy",
+        //                        ItemCreated = DateTime.Now
+        //                    };
+        //    var item2 = new Item
+        //                     {
+        //                         Latitude = 47.030233,
+        //                         Longitude = 8.277813,
+        //                         Description = "Bike at Pilatus cable car station.",
+        //                         ItemName = "MountainBike Rocky",
+        //                         ItemCreated = DateTime.Now
+        //                     };
 
-            this.Add(item1);
-            this.Add(item2);
-        }
+        //    this.Add(item1);
+        //    this.Add(item2);
+        //}
 
         public void Add(Item item)
         {
