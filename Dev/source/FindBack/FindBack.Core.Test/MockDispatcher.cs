@@ -19,6 +19,12 @@ namespace FindBack.Core.Test
             return true;
         }
 
+        public bool RequestClose(IMvxViewModel whichViewModel)
+        {
+            CloseRequests.Add(whichViewModel);
+            return true;
+        }
+
         public bool ShowViewModel(MvxViewModelRequest request)
         {
             NavigateRequests.Add(request);

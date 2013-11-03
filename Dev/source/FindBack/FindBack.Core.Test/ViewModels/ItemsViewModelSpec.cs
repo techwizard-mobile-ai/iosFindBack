@@ -1,13 +1,30 @@
 ﻿using System.Globalization;
+using Cirrious.MvvmCross.Plugins.Messenger;
+using FakeItEasy;
 using FindBack.Core.Services.DataStore;
+using FindBack.Core.Services.Items;
 using FindBack.Core.ViewModels;
 using FluentAssertions;
 using Machine.Specifications;
 
-namespace FindBack.Core.Test
+namespace FindBack.Core.Test.ViewModels
 {
+    public class ItemsViewModelSpec : ViewModelSpecHelper
+    {
+        protected static IItemService itemService;
+        protected static IMvxMessenger messenger;
+        protected static ItemsViewModel testee;
+
+        private Establish context = () =>
+        {
+            itemService = A.Fake<IItemService>();
+            messenger = A.Fake<IMvxMessenger>();
+            testee = new ItemsViewModel(itemService, messenger);
+        };
+    }
+
     [Subject(typeof(ItemsViewModel))]
-    public class when_adding_an_item : ViewModelSpecHelper
+    public class when_adding_an_item : ItemsViewModelSpec
     {
         private Because of = () =>
         {
@@ -26,7 +43,7 @@ namespace FindBack.Core.Test
     }
 
     [Subject(typeof(ItemsViewModel))]
-    public class when_selecting_an_item : ViewModelSpecHelper
+    public class when_selecting_an_item : ItemsViewModelSpec
     {
         private static Item item;
 

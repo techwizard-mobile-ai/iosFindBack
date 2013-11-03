@@ -27,7 +27,7 @@
         private bool _locationKnown;
         private string _itemName;
         private string _description;
-        private byte[] pictureBytes;
+        private byte[] _pictureBytes;
 
         private MvxCommand _choosePictureCommand;
         private MvxCommand _takePictureCommand;
@@ -45,8 +45,8 @@
 
         public byte[] PictureBytes
         {
-            get { return this.pictureBytes; }
-            set { this.pictureBytes = value; RaisePropertyChanged(() => this.PictureBytes); }
+            get { return this._pictureBytes; }
+            set { this._pictureBytes = value; RaisePropertyChanged(() => this.PictureBytes); }
         }
 
         public double? Longitude
