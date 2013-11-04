@@ -46,6 +46,8 @@
     <Compile Include="Converters\LatitudeCoordinateConverter.cs" />
     <Compile Include="Converters\ItemLocationConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DataStore\ImageStorageService.cs" />
+    <Compile Include="Services\DataStore\IImageStorageService.cs" />
     <Compile Include="Services\DataStore\IItemStorageService.cs" />
     <Compile Include="Services\DataStore\Item.cs" />
     <Compile Include="Services\DataStore\ItemStorageService.cs" />

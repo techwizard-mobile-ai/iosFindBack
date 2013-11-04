@@ -1,4 +1,9 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Linq.Expressions;
 using Cirrious.MvvmCross.Plugins.File;
 using Cirrious.MvvmCross.Plugins.Messenger;
 using Cirrious.MvvmCross.Plugins.PictureChooser;
@@ -9,6 +14,9 @@ using FindBack.Core.Services.Location;
 using FindBack.Core.ViewModels;
 using FluentAssertions;
 using Machine.Specifications;
+using Machine.Specifications.Model;
+
+// ReSharper disable InconsistentNaming
 
 namespace FindBack.Core.Test.ViewModels
 {
@@ -19,7 +27,7 @@ namespace FindBack.Core.Test.ViewModels
         protected static IMvxMessenger messenger;
         protected static IMvxPictureChooserTask pictureChooserTask;
         protected static IItemService itemService;
-        protected static IMvxFileStore fileStore;
+        protected static IImageStorageService imageStore;
 
         private Establish context = () =>
         {
@@ -27,19 +35,53 @@ namespace FindBack.Core.Test.ViewModels
             messenger = A.Fake<IMvxMessenger>();
             pictureChooserTask = A.Fake<IMvxPictureChooserTask>();
             itemService = A.Fake<IItemService>();
-            fileStore = A.Fake<IMvxFileStore>();
-            testee = new AddItemViewModel(locationService, messenger, pictureChooserTask, itemService, fileStore);
+            imageStore = A.Fake<IImageStorageService>();
+            testee = new AddItemViewModel(locationService, messenger, pictureChooserTask, itemService, imageStore);
         };
     }
 
     [Subject(typeof(AddItemViewModel))]
     public class when_saving_an_item : AddItemViewModelSpec
     {
-        private Because of = () =>
+        const string ItemName = "ItemName";
+        const string Description = "Description";
+        const double Latitude = 47.063762;
+        const double Longitude = 8.311063;
+        const string SaveLocation = "SaveLocation";
+        static readonly byte[] PictureBytes = {0x43};
+
+        private static Expression<Func<Item, bool>> ItemEquality()
         {
-            testee.SaveCommand.Execute(null);
+            return x => x.ItemName == ItemName &&
+                        x.Description == Description &&
+                        x.Latitude == Latitude &&
+                        x.Longitude == Longitude &&
+                        x.ImagePath == SaveLocation;
+        }
+
+        Establish context = () =>
+        {
+            testee.ItemName = ItemName;
+            testee.Description = Description;
+            testee.Latitude = Latitude;
+            testee.Longitude = Longitude;
+            testee.PictureBytes = PictureBytes;
+
+            A.CallTo(() => imageStore.SaveImageToFile(A<byte[]>._)).Returns(SaveLocation);
         };
 
-        
+        Because of = () => testee.SaveCommand.Execute(null);
+
+        It should_save_the_item_with_correct_values = () =>
+        {
+            A.CallTo(() => itemService.Add(A<Item>.That.Matches(ItemEquality()))).MustHaveHappened();
+        };
+
+        It should_save_the_picture_to_the_filesystem = () =>
+        {
+            A.CallTo(
+                () =>
+                    imageStore.SaveImageToFile(A<byte[]>.That.Matches(x => x.SequenceEqual(PictureBytes)))).MustHaveHappened();
+        };
     }
 }

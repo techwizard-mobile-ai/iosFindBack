@@ -33,7 +33,7 @@ namespace FindBack.Core.Test
 
         public bool ChangePresentation(MvxPresentationHint hint)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

@@ -18,7 +18,7 @@
         private readonly IMvxPictureChooserTask _pictureChooserTask;
 
         private readonly IItemService _itemService;
-        private readonly IMvxFileStore _fileStore;
+        private readonly IImageStorageService _imageStore;
         private readonly IMvxMessenger _messenger;
         private readonly MvxSubscriptionToken _token;
 
@@ -33,12 +33,12 @@
         private MvxCommand _takePictureCommand;
         private MvxCommand _saveCommand;
 
-        public AddItemViewModel(ILocationService locationService, IMvxMessenger messenger, IMvxPictureChooserTask pictureChooserTask, IItemService itemService, IMvxFileStore fileStore)
+        public AddItemViewModel(ILocationService locationService, IMvxMessenger messenger, IMvxPictureChooserTask pictureChooserTask, IItemService itemService, IImageStorageService imageStore)
         {
             _locationService = locationService;
             _pictureChooserTask = pictureChooserTask;
             _itemService = itemService;
-            this._fileStore = fileStore;
+            this._imageStore = imageStore;
             _token = messenger.SubscribeOnMainThread<LocationMessage>(OnLocationMessage);
             GetInitialLocation();
         }
@@ -131,7 +131,7 @@
                                         Longitude = this.Longitude,
                                         ItemCreated = DateTime.UtcNow,
                                         Description = this.Description,
-                                        ImagePath = this.GenerateImagePath()
+                                        ImagePath = _imageStore.SaveImageToFile(this.PictureBytes)
                                     };
 
             this._itemService.Add(collectedItem);
@@ -169,19 +169,6 @@
         {
             Latitude = locationMessage.Latitude;
             Longitude = locationMessage.Longitude;
-        }
-
-
-        private string GenerateImagePath()
-        {
-            if (this.PictureBytes == null)
-                return null;
-
-            var randomFileName = "Image" + Guid.NewGuid().ToString("N") + ".jpg";
-            _fileStore.EnsureFolderExists("Images");
-            var path = _fileStore.PathCombine("Images", randomFileName);
-            _fileStore.WriteFile(path, this.PictureBytes);
-            return path;
         }
     }
 }
