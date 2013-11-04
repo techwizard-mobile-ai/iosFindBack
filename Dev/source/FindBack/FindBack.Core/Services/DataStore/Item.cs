@@ -19,12 +19,12 @@
         {
             return string.Format(
                 "Id: {0}, ItemName: {1}, Description: {2}, Lat: {3}, Long: {4}, Item created: {5}",
-                this.Id,
-                this.ItemName,
-                this.Description,
-                this.Latitude,
-                this.Longitude,
-                this.ItemCreated);
+                Id,
+                ItemName,
+                Description,
+                Latitude,
+                Longitude,
+                ItemCreated);
         }
     }
 }

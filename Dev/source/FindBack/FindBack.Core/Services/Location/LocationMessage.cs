@@ -6,8 +6,8 @@
     {
         public LocationMessage(object sender, double latitude, double longitude) : base(sender)
         {
-            this.Latitude = latitude;
-            this.Longitude = longitude;
+            Latitude = latitude;
+            Longitude = longitude;
         }
 
         public double Longitude { get; private set; }

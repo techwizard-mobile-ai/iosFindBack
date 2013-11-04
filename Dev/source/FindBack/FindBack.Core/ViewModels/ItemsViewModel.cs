@@ -6,12 +6,13 @@
     using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.ViewModels;
 
-    using FindBack.Core.Services.DataStore;
-    using FindBack.Core.Services.Items;
+    using Services.DataStore;
+    using Services.Items;
 
     public class ItemsViewModel : MvxViewModel
     {
         private readonly IItemService _itemService;
+        // ReSharper disable once NotAccessedField.Local
         private readonly MvxSubscriptionToken _collectionChangedToken;
 
         private List<Item> _items;
@@ -22,7 +23,7 @@
 
         public ItemsViewModel(IItemService itemService, IMvxMessenger messenger)
         {
-            this._itemService = itemService;
+            _itemService = itemService;
             ReloadList();
             _collectionChangedToken = messenger.Subscribe<CollectionChangedMessage>(OnCollectionChanged);
         }
@@ -50,7 +51,7 @@
         {
             get
             {
-                _addItemCommand = _addItemCommand ?? new MvxCommand(this.GoToAddItem);
+                _addItemCommand = _addItemCommand ?? new MvxCommand(GoToAddItem);
                 return _addItemCommand;
             }
         }
@@ -65,13 +66,13 @@
 
         private void ReloadList()
         {
-            Items = this._itemService.GetItems();
-            this.RefreshDataCount();
+            Items = _itemService.GetItems();
+            RefreshDataCount();
         }
 
         private void OnCollectionChanged(CollectionChangedMessage obj)
         {
-            this.ReloadList();
+            ReloadList();
         }
 
         private void GoToAddItem()
@@ -81,7 +82,7 @@
 
         private void RefreshDataCount()
         {
-            TotalCount = this._itemService.Count;
+            TotalCount = _itemService.Count;
         }
     }
 }

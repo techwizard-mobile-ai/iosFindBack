@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    using FindBack.Core.Services.DataStore;
+    using DataStore;
 
     public interface IItemService
     {

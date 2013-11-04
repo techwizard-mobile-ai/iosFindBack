@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
-using Cirrious.MvvmCross.Plugins.File;
 using Cirrious.MvvmCross.Plugins.Messenger;
 using Cirrious.MvvmCross.Plugins.PictureChooser;
 using FakeItEasy;
@@ -12,11 +8,7 @@ using FindBack.Core.Services.DataStore;
 using FindBack.Core.Services.Items;
 using FindBack.Core.Services.Location;
 using FindBack.Core.ViewModels;
-using FluentAssertions;
 using Machine.Specifications;
-using Machine.Specifications.Model;
-
-// ReSharper disable InconsistentNaming
 
 namespace FindBack.Core.Test.ViewModels
 {

@@ -23,8 +23,6 @@
                 .ToList();
         }
 
-        public Item Latest { get; private set; }
-
         public void Add(Item item)
         {
             _connection.Insert(item);

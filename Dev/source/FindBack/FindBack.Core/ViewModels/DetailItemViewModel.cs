@@ -4,8 +4,8 @@
 
     using Cirrious.MvvmCross.ViewModels;
 
-    using FindBack.Core.Services.DataStore;
-    using FindBack.Core.Services.Items;
+    using Services.DataStore;
+    using Services.Items;
 
     public class DetailItemViewModel : MvxViewModel
     {

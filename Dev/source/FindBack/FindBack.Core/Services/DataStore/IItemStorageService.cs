@@ -5,7 +5,6 @@
     public interface IItemStorageService
     {
         List<Item> All();
-        Item Latest { get; }
         void Add(Item item);
         void Delete(Item item);
         void Update(Item item);

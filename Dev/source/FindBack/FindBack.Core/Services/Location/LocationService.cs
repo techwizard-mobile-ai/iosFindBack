@@ -6,16 +6,14 @@
 
     public class LocationService : ILocationService
     {
-        private readonly IMvxLocationWatcher _locationWatcher;
         private readonly IMvxMessenger _messenger;
         private readonly object _lockObject = new object();
         private MvxGeoLocation _latestLocation;
 
         public LocationService(IMvxLocationWatcher locationWatcher, IMvxMessenger messenger)
         {
-            this._locationWatcher = locationWatcher;
-            this._messenger = messenger;
-            this._locationWatcher.Start(new MvxLocationOptions(), this.OnLocation, this.OnLocationError);
+            _messenger = messenger;
+            locationWatcher.Start(new MvxLocationOptions(), OnLocation, OnLocationError);
         }
 
         private void OnLocationError(MvxLocationError error)

@@ -5,11 +5,11 @@ namespace FindBack.Core.Services.DataStore
 {
     public class ImageStorageService : IImageStorageService
     {
-        private IMvxFileStore _fileStore;
+        private readonly IMvxFileStore _fileStore;
 
         public ImageStorageService(IMvxFileStore fileStore)
         {
-            this._fileStore = fileStore;
+            _fileStore = fileStore;
         }
 
         public string SaveImageToFile(byte[] pictureBytes)

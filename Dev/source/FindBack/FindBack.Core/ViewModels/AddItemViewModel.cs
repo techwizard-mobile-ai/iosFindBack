@@ -2,15 +2,13 @@
 {
     using System;
     using System.IO;
-
-    using Cirrious.MvvmCross.Plugins.File;
     using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.Plugins.PictureChooser;
     using Cirrious.MvvmCross.ViewModels;
 
-    using FindBack.Core.Services.DataStore;
-    using FindBack.Core.Services.Items;
-    using FindBack.Core.Services.Location;
+    using Services.DataStore;
+    using Services.Items;
+    using Services.Location;
 
     public class AddItemViewModel : MvxViewModel
     {
@@ -19,7 +17,7 @@
 
         private readonly IItemService _itemService;
         private readonly IImageStorageService _imageStore;
-        private readonly IMvxMessenger _messenger;
+        // ReSharper disable once NotAccessedField.Local
         private readonly MvxSubscriptionToken _token;
 
         private double? _longitude;
@@ -38,27 +36,27 @@
             _locationService = locationService;
             _pictureChooserTask = pictureChooserTask;
             _itemService = itemService;
-            this._imageStore = imageStore;
+            _imageStore = imageStore;
             _token = messenger.SubscribeOnMainThread<LocationMessage>(OnLocationMessage);
             GetInitialLocation();
         }
 
         public byte[] PictureBytes
         {
-            get { return this._pictureBytes; }
-            set { this._pictureBytes = value; RaisePropertyChanged(() => this.PictureBytes); }
+            get { return _pictureBytes; }
+            set { _pictureBytes = value; RaisePropertyChanged(() => PictureBytes); }
         }
 
         public double? Longitude
         {
-            get { return this._longitude; }
-            set { this._longitude = value; RaisePropertyChanged(() => Longitude); }
+            get { return _longitude; }
+            set { _longitude = value; RaisePropertyChanged(() => Longitude); }
         }
 
         public double? Latitude
         {
-            get { return this._latitude; }
-            set { this._latitude = value; RaisePropertyChanged(() => Latitude); }
+            get { return _latitude; }
+            set { _latitude = value; RaisePropertyChanged(() => Latitude); }
         }
 
         public bool LocationKnown
@@ -69,14 +67,14 @@
 
         public string ItemName
         {
-            get { return this._itemName; }
-            set { this._itemName = value; RaisePropertyChanged(() => ItemName); }
+            get { return _itemName; }
+            set { _itemName = value; RaisePropertyChanged(() => ItemName); }
         }
 
         public string Description
         {
-            get { return this._description; }
-            set { this._description = value; RaisePropertyChanged(() => Description); }
+            get { return _description; }
+            set { _description = value; RaisePropertyChanged(() => Description); }
         }
 
         public System.Windows.Input.ICommand SaveCommand
@@ -108,8 +106,8 @@
 
         private void GetInitialLocation()
         {
-            double? lat = null;
-            double? lng = null;
+            double? lat;
+            double? lng;
             if (_locationService.TryGetLatestLocation(out lat, out lng))
             {
                 LocationKnown = true;
@@ -120,22 +118,22 @@
 
         private void DoSave()
         {
-            if (!this.ValidateItem())
+            if (!ValidateItem())
             {
                 return;
             }
 
             var collectedItem = new Item {
-                                        ItemName = this.ItemName,
-                                        Latitude = this.Latitude,
-                                        Longitude = this.Longitude,
+                                        ItemName = ItemName,
+                                        Latitude = Latitude,
+                                        Longitude = Longitude,
                                         ItemCreated = DateTime.UtcNow,
-                                        Description = this.Description,
-                                        ImagePath = _imageStore.SaveImageToFile(this.PictureBytes)
+                                        Description = Description,
+                                        ImagePath = _imageStore.SaveImageToFile(PictureBytes)
                                     };
 
-            this._itemService.Add(collectedItem);
-            this.Close(this);
+            _itemService.Add(collectedItem);
+            Close(this);
         }
 
         private bool ValidateItem()
@@ -150,7 +148,7 @@
 
         private void DoTakePicture()
         {
-            this._pictureChooserTask.TakePicture(400, 95, this.OnPicture, () => { });
+            _pictureChooserTask.TakePicture(400, 95, OnPicture, () => { });
         }
 
         private void DoChoosePicture()
@@ -162,7 +160,7 @@
         {
             var memoryStream = new MemoryStream();
             pictureStream.CopyTo(memoryStream);
-            this.PictureBytes = memoryStream.ToArray();
+            PictureBytes = memoryStream.ToArray();
         }
 
         private void OnLocationMessage(LocationMessage locationMessage)
