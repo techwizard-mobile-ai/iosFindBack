@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res/FindBack.Droid"
+    xmlns:local="http://schemas.android.com/apk/res/findback.droid"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
@@ -52,6 +52,13 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         local:MvxBind="Text Item,Converter=ItemLocation" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_action_place"
+        android:text="Map"
+        local:MvxBind="Click MapCommand"
+        android:gravity="left|center_vertical" />
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

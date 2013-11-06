@@ -1,7 +1,5 @@
 ﻿namespace FindBack.Core.ViewModels
 {
-    using System.Windows.Input;
-
     using Cirrious.MvvmCross.ViewModels;
 
     using Services.DataStore;
@@ -28,7 +26,7 @@
             set { _item = value; RaisePropertyChanged(() => Item); }
         }
 
-        public ICommand DeleteCommand
+        public IMvxCommand DeleteCommand
         {
             get
             {
@@ -39,5 +37,15 @@
                 });
             }
         }
+
+        //public IMvxCommand MapCommand { get { return new MvxCommand(() => ShowViewModel<MapViewModel>()); } }
+        public IMvxCommand MapCommand { get
+        {
+            var lat = Item.Latitude;
+            return new MvxCommand(() => ShowViewModel<MapViewModel>(new
+        {
+            latitude = Item.Latitude, 
+            longitude = Item.Longitude
+        })); } }
     }
 }
