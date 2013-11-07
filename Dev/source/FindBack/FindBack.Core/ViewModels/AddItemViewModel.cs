@@ -20,8 +20,8 @@
         // ReSharper disable once NotAccessedField.Local
         private readonly MvxSubscriptionToken _token;
 
-        private double? _longitude;
-        private double? _latitude;
+        private double _longitude;
+        private double _latitude;
         private bool _locationKnown;
         private string _itemName;
         private string _description;
@@ -47,13 +47,13 @@
             set { _pictureBytes = value; RaisePropertyChanged(() => PictureBytes); }
         }
 
-        public double? Longitude
+        public double Longitude
         {
             get { return _longitude; }
             set { _longitude = value; RaisePropertyChanged(() => Longitude); }
         }
 
-        public double? Latitude
+        public double Latitude
         {
             get { return _latitude; }
             set { _latitude = value; RaisePropertyChanged(() => Latitude); }
@@ -106,13 +106,13 @@
 
         private void GetInitialLocation()
         {
-            double? lat;
-            double? lng;
-            if (_locationService.TryGetLatestLocation(out lat, out lng))
+            double latitude;
+            double longitude;
+            if (_locationService.TryGetLatestLocation(out latitude, out longitude))
             {
                 LocationKnown = true;
-                Latitude = lat;
-                Longitude = lng;
+                Latitude = latitude;
+                Longitude = longitude;
             }
         }
 

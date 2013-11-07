@@ -10,9 +10,9 @@ namespace FindBack.Core.Converters
         public int Seconds { get; set; }
         public int Milliseconds { get; set; }
         
-        public static GeoCoordinate FromDouble(double? angleInDegrees)
+        public static GeoCoordinate FromDouble(double angleInDegrees)
         {
-            if (!angleInDegrees.HasValue || angleInDegrees > 180 || angleInDegrees < -180)
+            if (double.IsNaN(angleInDegrees) || angleInDegrees > 180 || angleInDegrees < -180)
             {
                 return null;
             }
@@ -20,12 +20,12 @@ namespace FindBack.Core.Converters
             var result = new GeoCoordinate();
 
             result.IsNegative = angleInDegrees < 0;
-            angleInDegrees = Math.Abs(angleInDegrees.Value);
+            angleInDegrees = Math.Abs(angleInDegrees);
 
-            result.Degrees = (int)Math.Floor(angleInDegrees.Value);
+            result.Degrees = (int)Math.Floor(angleInDegrees);
             var delta = angleInDegrees - result.Degrees;
 
-            var seconds = (int)Math.Floor(3600.0 * delta.Value);
+            var seconds = (int)Math.Floor(3600.0 * delta);
             result.Seconds = seconds % 60;
             result.Minutes = (int)Math.Floor(seconds / 60.0);
             delta = delta * 3600.0 - seconds;

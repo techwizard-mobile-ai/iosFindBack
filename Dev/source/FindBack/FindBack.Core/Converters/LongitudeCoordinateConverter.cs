@@ -5,9 +5,9 @@ using Cirrious.CrossCore.Converters;
 namespace FindBack.Core.Converters
 {
     public class LongitudeCoordinateConverter
-        : MvxValueConverter<double?, string>
+        : MvxValueConverter<double, string>
     {
-        protected override string Convert(double? value, Type targetType, object parameter, CultureInfo culture)
+        protected override string Convert(double value, Type targetType, object parameter, CultureInfo culture)
         {
             var coordinate = GeoCoordinate.FromDouble(value);
 

@@ -13,7 +13,7 @@ namespace FindBack.Core.Test.Converters
         [TestCase(180.00, false, 180, 0, 0, 0)]
         [TestCase(0.00, false, 0, 0, 0, 0)]
         [TestCase(-0.0001, true, 0, 0, 0, 360)]
-        public void WhenGivenDecimalPosition_ShouldConvertToDegMinSecPosition(double? coordinate, bool isNegative, int degrees, int minutes, int seconds, int millisecs)
+        public void WhenGivenDecimalPosition_ShouldConvertToDegMinSecPosition(double coordinate, bool isNegative, int degrees, int minutes, int seconds, int millisecs)
         {
             GeoCoordinate result = GeoCoordinate.FromDouble(coordinate);
 
@@ -26,8 +26,8 @@ namespace FindBack.Core.Test.Converters
 
         [TestCase(-180.01)]
         [TestCase(180.01)]
-        [TestCase(null)]
-        public void WhenGivenOutOfRangeDecimalPosition_ShouldReturnNull(double? coordinate)
+        [TestCase(double.NaN)]
+        public void WhenGivenOutOfRangeDecimalPosition_ShouldReturnNull(double coordinate)
         {
             GeoCoordinate result = GeoCoordinate.FromDouble(coordinate);
 

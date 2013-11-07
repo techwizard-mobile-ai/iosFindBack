@@ -46,7 +46,7 @@ namespace FindBack.Core.ViewModels
         public IMvxCommand MapCommand { 
             get
                 {
-                    return new MvxCommand(() => ShowViewModel<MapViewModel>(new { latitude = Item.Latitude.Value, longitude = Item.Longitude.Value }));
+                    return new MvxCommand(() => ShowViewModel<MapViewModel>(new { latitude = Item.Latitude, longitude = Item.Longitude }));
                 } 
         }
     }
