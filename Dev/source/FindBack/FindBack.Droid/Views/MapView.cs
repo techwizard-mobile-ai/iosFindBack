@@ -18,7 +18,7 @@ using FindBack.Core.ViewModels;
 
 namespace FindBack.Droid.Views
 {
-    [Activity(Label = "View for FourthViewModel")]
+    [Activity(Label = "Where is it?")]
     public class MapView : MvxFragmentActivity
     {
         private Marker _marker;
@@ -34,22 +34,14 @@ namespace FindBack.Droid.Views
             var mapFragment = (SupportMapFragment)SupportFragmentManager.FindFragmentById(Resource.Id.map);
 
             var options = new MarkerOptions();
-            options.SetPosition(new LatLng(viewModel.Location.Lat, viewModel.Location.Lng));
-            options.SetTitle("Keith");
+            var latLng = new LatLng(viewModel.Latitude, viewModel.Longitude);
+            options.SetPosition(latLng);
+            //options.SetTitle("Keith");
             _marker = mapFragment.Map.AddMarker(options);
+            _marker.Position = latLng;
 
             _centerHelper = new CenterHelper(mapFragment.Map);
-
-            var set = this.CreateBindingSet<MapView, MapViewModel>();
-            set.Bind(_marker)
-               .For(m => m.Position)
-               .To(vm => vm.Location)
-               .WithConversion(new LocationToLatLngValueConverter(), null);
-            set.Bind(_centerHelper)
-               .For(m => m.Center)
-               .To(vm => vm.Location)
-               .WithConversion(new LocationToLatLngValueConverter(), null);
-            set.Apply();
+            _centerHelper.Center = latLng;
         }
 
         public class CenterHelper

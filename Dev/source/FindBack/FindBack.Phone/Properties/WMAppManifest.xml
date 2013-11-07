@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{fe14cfac-2930-42c8-8070-e8be69426a1a}" Title="FindBack.Phone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="FindBack.Phone author" Description="Sample description" Publisher="FindBack.Phone" PublisherID="{0c988757-49f3-4955-b74f-90a856c640d5}">
+  <App xmlns="" ProductID="{fe14cfac-2930-42c8-8070-e8be69426a1a}" Title="FindBack" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="FindBack.Phone author" Description="Sample description" Publisher="FindBack.Phone" PublisherID="{0c988757-49f3-4955-b74f-90a856c640d5}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />

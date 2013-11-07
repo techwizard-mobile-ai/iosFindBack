@@ -108,12 +108,9 @@
         {
             double latitude;
             double longitude;
-            if (_locationService.TryGetLatestLocation(out latitude, out longitude))
-            {
-                LocationKnown = true;
-                Latitude = latitude;
-                Longitude = longitude;
-            }
+            LocationKnown = _locationService.TryGetLatestLocation(out latitude, out longitude);
+            Latitude = latitude;
+            Longitude = longitude;
         }
 
         private void DoSave()

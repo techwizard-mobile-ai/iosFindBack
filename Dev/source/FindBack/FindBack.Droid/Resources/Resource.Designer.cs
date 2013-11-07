@@ -265,10 +265,7 @@ namespace FindBack.Droid
 			public const int Icon = 2130837538;
 			
 			// aapt resource value: 0x7f020023
-			public const int monoandroidsplash = 2130837539;
-			
-			// aapt resource value: 0x7f020024
-			public const int splash = 2130837540;
+			public const int splash = 2130837539;
 			
 			static Drawable()
 			{
@@ -457,9 +454,6 @@ namespace FindBack.Droid
 		
 		public partial class Style
 		{
-			
-			// aapt resource value: 0x7f080001
-			public const int Mono_Android_Theme_Splash = 2131230721;
 			
 			// aapt resource value: 0x7f080000
 			public const int Theme_Splash = 2131230720;

@@ -149,7 +149,6 @@
     <Compile Include="Views\AddItemView.cs" />
     <Compile Include="Views\DetailItemView.cs" />
     <Compile Include="Views\ItemsView.cs" />
-    <Compile Include="Views\LocationToLatLngValueConverter.cs" />
     <Compile Include="Views\MapView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -167,7 +166,7 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\MapView.axml">
-      <SubType>AndroidResource</SubType>
+      <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>

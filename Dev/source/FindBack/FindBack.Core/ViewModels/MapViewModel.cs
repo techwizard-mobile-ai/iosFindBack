@@ -1,6 +1,5 @@
 ﻿using Cirrious.MvvmCross.Plugins.Messenger;
 using Cirrious.MvvmCross.ViewModels;
-using FindBack.Core.Services.Location;
 
 namespace FindBack.Core.ViewModels
 {
@@ -8,15 +7,8 @@ namespace FindBack.Core.ViewModels
     {
         private readonly MvxSubscriptionToken _token;
 
-        private Location _location;
         private double _latitude;
         private double _longitude;
-
-        public Location Location 
-        {   
-            get { return _location; }
-            set { _location = value; RaisePropertyChanged(() => Location); }
-        }
 
         public double Latitude 
         {   
