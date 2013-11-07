@@ -29,7 +29,7 @@ namespace FindBack.Touch.Views
 			};
 
 			this.AddBindings (new Dictionary<object, string> () {
- { s, "Clicked SaveCommand" },
+				{ s, "Clicked SaveCommand" },
 			});
 
 			NavigationItem.SetRightBarButtonItem (s, false);
@@ -38,14 +38,15 @@ namespace FindBack.Touch.Views
 			var set = this.CreateBindingSet<AddItemView, AddItemViewModel> ();
 			set.Bind (ItemText).To (item => item.ItemName);
 			set.Bind (DescriptionText).To (item => item.Description);
-			set.Bind (PositionLabel).To (item => item).WithConversion ("ItemLocation");
+			set.Bind (LongitudeLabel).To (item => item.Longitude).WithConversion ("LongitudeCoordinate");
+			set.Bind (LatitudeLabel).To (item => item.Latitude).WithConversion ("LatitudeCoordinate");
 			set.Bind (ItemImage).To (vm => vm.PictureBytes).WithConversion ("InMemoryImage");
 			set.Apply ();
 
 			//this.CreateBinding(TakePictureButton).To((AddItemViewModel item) => item.SaveCommand).Apply();
 			this.AddBindings (new Dictionary<object, string> () {
-				{ TakePictureButton, "TouchUpInside TakePictureCommand" },
-				{ ChoosePictureButton, "TouchUpInside ChoosePictureCommand" },
+ { TakePictureButton, "TouchUpInside TakePictureCommand" },
+ { ChoosePictureButton, "TouchUpInside ChoosePictureCommand" },
 			});
 
 			var g = new UITapGestureRecognizer (() => {

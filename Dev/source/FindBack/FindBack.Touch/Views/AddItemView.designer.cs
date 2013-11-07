@@ -25,13 +25,21 @@ namespace FindBack.Touch.Views
 		MonoTouch.UIKit.UITextField ItemText { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel PositionLabel { get; set; }
+		MonoTouch.UIKit.UILabel LatitudeLabel { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel LongitudeLabel { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UIButton TakePictureButton { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (ChoosePictureButton != null) {
+				ChoosePictureButton.Dispose ();
+				ChoosePictureButton = null;
+			}
+
 			if (DescriptionText != null) {
 				DescriptionText.Dispose ();
 				DescriptionText = null;
@@ -47,19 +55,19 @@ namespace FindBack.Touch.Views
 				ItemText = null;
 			}
 
-			if (PositionLabel != null) {
-				PositionLabel.Dispose ();
-				PositionLabel = null;
-			}
-
-			if (ChoosePictureButton != null) {
-				ChoosePictureButton.Dispose ();
-				ChoosePictureButton = null;
-			}
-
 			if (TakePictureButton != null) {
 				TakePictureButton.Dispose ();
 				TakePictureButton = null;
+			}
+
+			if (LatitudeLabel != null) {
+				LatitudeLabel.Dispose ();
+				LatitudeLabel = null;
+			}
+
+			if (LongitudeLabel != null) {
+				LongitudeLabel.Dispose ();
+				LongitudeLabel = null;
 			}
 		}
 	}
