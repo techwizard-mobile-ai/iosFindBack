@@ -45,6 +45,7 @@
     <views:MvxPhonePage.ApplicationBar>
         <shell:ApplicationBar >
             <shell:ApplicationBar.Buttons>
+                <shell:ApplicationBarIconButton IconUri="/Images/appbar.map.png" Text="Map" Click="AppBarMapButton_OnClick"></shell:ApplicationBarIconButton>
                 <shell:ApplicationBarIconButton IconUri="/Images/appbar.delete.png" Text="Delete" Click="AppBarDeleteButton_OnClick"></shell:ApplicationBarIconButton>
             </shell:ApplicationBar.Buttons>
         </shell:ApplicationBar>

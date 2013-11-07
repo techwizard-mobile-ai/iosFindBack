@@ -1,47 +1,39 @@
-﻿using Cirrious.MvvmCross.ViewModels;
+﻿using Cirrious.MvvmCross.Plugins.Messenger;
+using Cirrious.MvvmCross.ViewModels;
+using FindBack.Core.Services.Location;
 
 namespace FindBack.Core.ViewModels
 {
     public class MapViewModel: MvxViewModel
     {
+        private readonly MvxSubscriptionToken _token;
+
         private Location _location;
+        private double _latitude;
+        private double _longitude;
+
         public Location Location 
         {   
             get { return _location; }
             set { _location = value; RaisePropertyChanged(() => Location); }
         }
 
-        private double _lat;
-        public double Lat 
+        public double Latitude 
         {   
-            get { return _lat; }
-            set { _lat = value; RaisePropertyChanged(() => Lat); }
+            get { return _latitude; }
+            set { _latitude = value; RaisePropertyChanged(() => Latitude); }
         }
 
-        private double _lng;
-        public double Lng 
+        public double Longitude 
         {   
-            get { return _lng; }
-            set { _lng = value; RaisePropertyChanged(() => Lng); }
+            get { return _longitude; }
+            set { _longitude = value; RaisePropertyChanged(() => Longitude); }
         }
-
-        public MapViewModel()
-        {
-            Location = new Location()
-                {
-                    Lat = 47.063762,
-                    Lng = 8.311063
-                };
-        }
-
 
         public void Init(double latitude, double longitude)
         {
-            //Location = new Location()
-            //{
-            //    Lat = latitude,
-            //    Lng = longitude
-            //};
+            Latitude = latitude;
+            Longitude = longitude;
         }
     }
 }

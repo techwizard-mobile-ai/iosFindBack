@@ -23,5 +23,10 @@ namespace FindBack.Phone.Views
         {
             ((DetailItemViewModel)ViewModel).DeleteCommand.Execute(null);
         }
+
+        private void AppBarMapButton_OnClick(object sender, EventArgs e)
+        {
+            ((DetailItemViewModel)ViewModel).MapCommand.Execute(null);
+        }
     }
 }

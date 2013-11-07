@@ -1,4 +1,7 @@
-﻿namespace FindBack.Core.ViewModels
+﻿using Cirrious.MvvmCross.Plugins.Messenger;
+using FindBack.Core.Services.Location;
+
+namespace FindBack.Core.ViewModels
 {
     using Cirrious.MvvmCross.ViewModels;
 
@@ -8,11 +11,13 @@
     public class DetailItemViewModel : MvxViewModel
     {
         private readonly IItemService _itemService;
+        private readonly IMvxMessenger _messenger;
         private Item _item;
 
-        public DetailItemViewModel(IItemService itemService)
+        public DetailItemViewModel(IItemService itemService, IMvxMessenger messenger)
         {
             _itemService = itemService;
+            _messenger = messenger;
         }
 
         public void Init(int id)
@@ -38,14 +43,11 @@
             }
         }
 
-        //public IMvxCommand MapCommand { get { return new MvxCommand(() => ShowViewModel<MapViewModel>()); } }
-        public IMvxCommand MapCommand { get
-        {
-            var lat = Item.Latitude;
-            return new MvxCommand(() => ShowViewModel<MapViewModel>(new
-        {
-            latitude = Item.Latitude, 
-            longitude = Item.Longitude
-        })); } }
+        public IMvxCommand MapCommand { 
+            get
+                {
+                    return new MvxCommand(() => ShowViewModel<MapViewModel>(new { latitude = Item.Latitude.Value, longitude = Item.Longitude.Value }));
+                } 
+        }
     }
 }

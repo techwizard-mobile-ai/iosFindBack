@@ -115,6 +115,9 @@
     <Compile Include="ValueConverters\NativeLatitudeCoordinateValueConverter.cs" />
     <Compile Include="ValueConverters\NativeLongitudeCoordinateValueConverter.cs" />
     <Compile Include="ValueConverters\NativeItemLocationValueConverter.cs" />
+    <Compile Include="Views\MapView.xaml.cs">
+      <DependentUpon>MapView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddItemView.xaml.cs">
       <DependentUpon>AddItemView.xaml</DependentUpon>
     </Compile>
@@ -133,6 +136,10 @@
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MapView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AddItemView.xaml">
       <SubType>Designer</SubType>
@@ -174,9 +181,13 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\appbar.map.png" />
+    <Content Include="Images\appbar.map_type.png" />
     <Content Include="Images\appbar.save.png" />
     <Content Include="Images\appbar.camera.png" />
     <Content Include="Images\appbar.search.png" />
+    <Content Include="Images\appbar.minus.png" />
+    <Content Include="Images\appbar.location.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
