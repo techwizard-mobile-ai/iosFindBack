@@ -44,7 +44,6 @@
     <Compile Include="Converters\GeoCoordinate.cs" />
     <Compile Include="Converters\LongitudeCoordinateConverter.cs" />
     <Compile Include="Converters\LatitudeCoordinateConverter.cs" />
-    <Compile Include="Converters\ItemLocationConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DataStore\ImageStorageService.cs" />
     <Compile Include="Services\DataStore\IImageStorageService.cs" />
@@ -60,7 +59,6 @@
     <Compile Include="ViewModels\AddItemViewModel.cs" />
     <Compile Include="ViewModels\DetailItemViewModel.cs" />
     <Compile Include="ViewModels\ItemsViewModel.cs" />
-    <Compile Include="ViewModels\Location.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

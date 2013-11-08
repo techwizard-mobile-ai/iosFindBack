@@ -37,9 +37,11 @@
                         <TextBox Text="{Binding Description, Mode=TwoWay}" ></TextBox>
                         <Image Height="250" Width="250" Source="{Binding PictureBytes, Converter={StaticResource BytesToImage}}"></Image>
                         <TextBlock Text="Position:" ></TextBlock>
-                        <TextBlock Text="{Binding Latitude, Converter={StaticResource LatitudeCoordinate}}" ></TextBlock>
-                        <TextBlock Text="{Binding Longitude, Converter={StaticResource LongitudeCoordinate}}" ></TextBlock>
-                    </StackPanel>
+                        <Grid>
+                            <TextBlock Text="{Binding Latitude, Converter={StaticResource LatitudeCoordinate}}" Width="230" HorizontalAlignment="Left"></TextBlock>
+                            <TextBlock Text="{Binding Longitude, Converter={StaticResource LongitudeCoordinate}}" Width="230" HorizontalAlignment="Right"></TextBlock>
+                        </Grid>
+                </StackPanel>
                 </Grid>
         </Grid>
     </ScrollViewer>

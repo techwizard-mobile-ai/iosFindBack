@@ -114,7 +114,6 @@
     <Compile Include="ValueConverters\NativeInMemoryImageValueConverter.cs" />
     <Compile Include="ValueConverters\NativeLatitudeCoordinateValueConverter.cs" />
     <Compile Include="ValueConverters\NativeLongitudeCoordinateValueConverter.cs" />
-    <Compile Include="ValueConverters\NativeItemLocationValueConverter.cs" />
     <Compile Include="Views\MapView.xaml.cs">
       <DependentUpon>MapView.xaml</DependentUpon>
     </Compile>

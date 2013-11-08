@@ -37,16 +37,16 @@
           android:layout_height="wrap_content"
           android:drawableLeft="@drawable/ic_action_camera"
           android:text="Take Picture"
+          local:MvxBind="Click TakePictureCommand"          
           android:layout_weight="1"
-          local:MvxBind="Click TakePictureCommand"
           android:gravity="left|center_vertical" />
       <Button
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:drawableLeft="@drawable/ic_action_collection"
           android:text="Choose Picture"
-          android:layout_weight="1"
           local:MvxBind="Click ChoosePictureCommand"
+          android:layout_weight="1"
           android:gravity="left|center_vertical" />
     </LinearLayout>
     <Mvx.MvxImageView
@@ -58,16 +58,23 @@
         android:layout_height="wrap_content"
         android:textSize="22dp"
         android:text="Position:" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        local:MvxBind="Text Latitude, Converter=LatitudeCoordinate" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18dp"
-        local:MvxBind="Text Longitude, Converter=LongitudeCoordinate" />
+    <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="18dp"
+          android:layout_weight="1"
+          local:MvxBind="Text Latitude, Converter=LatitudeCoordinate" />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="18dp"
+          android:layout_weight="1"
+          local:MvxBind="Text Longitude, Converter=LongitudeCoordinate" />
+      </LinearLayout>
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
