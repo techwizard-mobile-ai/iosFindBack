@@ -87,6 +87,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\FirstView.cs" />
+    <Compile Include="Views\MapView.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
@@ -178,5 +179,9 @@
   <ItemGroup>
     <InterfaceDefinition Include="Views\AddItemView.xib" />
     <InterfaceDefinition Include="Views\DetailItemView.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ic_action_place.png" />
+    <Content Include="zombie.png" />
   </ItemGroup>
 </Project>
