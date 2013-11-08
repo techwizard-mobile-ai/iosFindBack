@@ -182,16 +182,34 @@
     <AndroidResource Include="Resources\Layout\ItemRow.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Drawable\ic_action_discard.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_new.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_camera.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_collection.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_save.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_place.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_camera.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_camera.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_camera.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_camera.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_collection.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_collection.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_collection.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_collection.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_discard.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_discard.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_discard.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_discard.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_new.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_new.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_new.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_new.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_place.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_place.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_place.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_place.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_save.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_save.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_save.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_save.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindBack.Core\FindBack.Core.csproj">
