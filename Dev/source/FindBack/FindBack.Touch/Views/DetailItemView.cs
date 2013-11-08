@@ -34,6 +34,7 @@ namespace FindBack.Touch.Views
 
 			this.AddBindings (new Dictionary<object, string> () {
 				{ DeleteButton, "TouchUpInside DeleteCommand" },
+				{ MapButton, "TouchUpInside MapCommand" },
 			});
 
 		}

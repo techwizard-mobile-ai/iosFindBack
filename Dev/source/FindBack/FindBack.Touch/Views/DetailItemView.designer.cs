@@ -30,11 +30,14 @@ namespace FindBack.Touch.Views
 		[Outlet]
 		MonoTouch.UIKit.UILabel LongitudeLabel { get; set; }
 
+		[Outlet]
+		MonoTouch.UIKit.UIButton MapButton { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
-			if (ItemNameLabel != null) {
-				ItemNameLabel.Dispose ();
-				ItemNameLabel = null;
+			if (DeleteButton != null) {
+				DeleteButton.Dispose ();
+				DeleteButton = null;
 			}
 
 			if (DescritpionLabel != null) {
@@ -47,9 +50,14 @@ namespace FindBack.Touch.Views
 				ItemImage = null;
 			}
 
-			if (DeleteButton != null) {
-				DeleteButton.Dispose ();
-				DeleteButton = null;
+			if (ItemNameLabel != null) {
+				ItemNameLabel.Dispose ();
+				ItemNameLabel = null;
+			}
+
+			if (LatitudeLabel != null) {
+				LatitudeLabel.Dispose ();
+				LatitudeLabel = null;
 			}
 
 			if (LongitudeLabel != null) {
@@ -57,9 +65,9 @@ namespace FindBack.Touch.Views
 				LongitudeLabel = null;
 			}
 
-			if (LatitudeLabel != null) {
-				LatitudeLabel.Dispose ();
-				LatitudeLabel = null;
+			if (MapButton != null) {
+				MapButton.Dispose ();
+				MapButton = null;
 			}
 		}
 	}
