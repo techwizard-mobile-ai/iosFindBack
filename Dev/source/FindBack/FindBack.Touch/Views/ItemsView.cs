@@ -33,32 +33,33 @@ namespace FindBack.Touch.Views
 
 			NavigationItem.Title = "Find Back";
 
-            var source = new MvxStandardTableViewSource(TableView, "TitleText ItemName;ImageUrl ImagePath");
+			var source = new MvxStandardTableViewSource (TableView, "TitleText ItemName;ImageUrl ImagePath");
 			TableView.Source = source;
 
 			var set = this.CreateBindingSet<ItemsView, ItemsViewModel> ();
 			set.Bind (source).To (vm => vm.Items);
-			//set.Bind(s.Clicked).To(vm => vm.AddItemCommand);
+			//set.Bind (source).For (src => src.SelectionChangedCommand).To (vm => vm.ShowDetailCommand);
 			set.Apply ();
 
 			//this.AddBinding(s, new MvxBindingDescription("",));
 
 			this.AddBindings (new Dictionary<object, string> () {
-				{ s, "Clicked AddItemCommand" },
-            });
+ { s, "Clicked AddItemCommand" },
+				{ source, "SelectionChangedCommand ShowDetailCommand" }
+			});
     
             
-            TableView.ReloadData();
+			TableView.ReloadData ();
 
-            //var label = new UILabel(new RectangleF(10, 10, 300, 40));
-            //Add(label);
-            //var textField = new UITextField(new RectangleF(10, 50, 300, 40));
-            //Add(textField);
+			//var label = new UILabel(new RectangleF(10, 10, 300, 40));
+			//Add(label);
+			//var textField = new UITextField(new RectangleF(10, 50, 300, 40));
+			//Add(textField);
 
-            //var set = this.CreateBindingSet<ItemsView, Core.ViewModels.ItemsViewModel>();
-            //set.Bind(label).To(vm => vm.TotalCount);
-            //set.Bind(textField).To(vm => vm.TotalCount);
-            //set.Apply();
-        }
-    }
+			//var set = this.CreateBindingSet<ItemsView, Core.ViewModels.ItemsViewModel>();
+			//set.Bind(label).To(vm => vm.TotalCount);
+			//set.Bind(textField).To(vm => vm.TotalCount);
+			//set.Apply();
+		}
+	}
 }
