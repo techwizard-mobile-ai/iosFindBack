@@ -95,6 +95,10 @@
     <Compile Include="Views\AddItemView.designer.cs">
       <DependentUpon>AddItemView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\DetailItemView.cs" />
+    <Compile Include="Views\DetailItemView.designer.cs">
+      <DependentUpon>DetailItemView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default.png" />
@@ -173,5 +177,6 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
     <InterfaceDefinition Include="Views\AddItemView.xib" />
+    <InterfaceDefinition Include="Views\DetailItemView.xib" />
   </ItemGroup>
 </Project>

@@ -1,10 +1,6 @@
-using System;
-using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-
 namespace FindBack.Touch.Views
 {
+	using MonoTouch.UIKit;
 	using System.Collections.Generic;
 	using Cirrious.MvvmCross.Binding.BindingContext;
 	using Cirrious.MvvmCross.Touch.Views;
