@@ -5,9 +5,9 @@ using Cirrious.MvvmCross.Droid.Views;
 namespace FindBack.Droid
 {
     [Activity(
-		Label = "FindBack.Android"
+		Label = "FindBack"
 		, MainLauncher = true
-		, Icon = "@drawable/icon"
+		, Icon = "@drawable/ic_launcher"
 		, Theme = "@style/Theme.Splash"
 		, NoHistory = true
 		, ScreenOrientation = ScreenOrientation.Portrait)]

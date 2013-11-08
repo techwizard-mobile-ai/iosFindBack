@@ -41,7 +41,8 @@
             {
                 if (_latestLocation == null)
                 {
-                    lat = lng = double.NaN;
+                    lat = double.PositiveInfinity;
+                    lng = double.PositiveInfinity;
                     return false;
                 }
 

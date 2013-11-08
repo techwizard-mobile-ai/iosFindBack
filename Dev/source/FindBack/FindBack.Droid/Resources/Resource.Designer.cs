@@ -250,19 +250,19 @@ namespace FindBack.Droid
 			public const int ic_action_save = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int ic_plusone_medium_off_client = 2130837534;
+			public const int ic_launcher = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int ic_plusone_small_off_client = 2130837535;
+			public const int ic_plusone_medium_off_client = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int ic_plusone_standard_off_client = 2130837536;
+			public const int ic_plusone_small_off_client = 2130837536;
 			
 			// aapt resource value: 0x7f020021
-			public const int ic_plusone_tall_off_client = 2130837537;
+			public const int ic_plusone_standard_off_client = 2130837537;
 			
 			// aapt resource value: 0x7f020022
-			public const int Icon = 2130837538;
+			public const int ic_plusone_tall_off_client = 2130837538;
 			
 			// aapt resource value: 0x7f020023
 			public const int splash = 2130837539;
