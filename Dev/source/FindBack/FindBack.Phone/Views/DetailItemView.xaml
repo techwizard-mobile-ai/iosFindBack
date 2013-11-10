@@ -47,7 +47,7 @@
             </Grid>
         </Grid>
     </ScrollViewer>
-            <views:MvxPhonePage.ApplicationBar>
+    <views:MvxPhonePage.ApplicationBar>
         <shell:ApplicationBar >
             <shell:ApplicationBar.Buttons>
                 <shell:ApplicationBarIconButton IconUri="/Images/appbar.map.png" Text="Map" Click="AppBarMapButton_OnClick"></shell:ApplicationBarIconButton>

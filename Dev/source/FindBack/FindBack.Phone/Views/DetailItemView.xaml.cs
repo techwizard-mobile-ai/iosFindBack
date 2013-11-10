@@ -19,6 +19,13 @@ namespace FindBack.Phone.Views
             InitializeComponent();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            var locationKnown = ((DetailItemViewModel)ViewModel).Item.LocationKnown;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = locationKnown;
+        }
+
         private void AppBarDeleteButton_OnClick(object sender, EventArgs e)
         {
             ((DetailItemViewModel)ViewModel).DeleteCommand.Execute(null);

@@ -286,8 +286,11 @@ namespace FindBack.Droid
 			// aapt resource value: 0x7f050004
 			public const int hybrid = 2131034116;
 			
+			// aapt resource value: 0x7f050007
+			public const int map = 2131034119;
+			
 			// aapt resource value: 0x7f050006
-			public const int map = 2131034118;
+			public const int mapCmdButton = 2131034118;
 			
 			// aapt resource value: 0x7f050000
 			public const int none = 2131034112;

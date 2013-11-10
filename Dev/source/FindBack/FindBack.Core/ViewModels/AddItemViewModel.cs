@@ -124,7 +124,7 @@
                                         ItemName = ItemName,
                                         Latitude = Latitude,
                                         Longitude = Longitude,
-                                        ItemCreated = DateTime.UtcNow,
+                                        ItemCreated = DateTime.Now,
                                         Description = Description,
                                         ImagePath = _imageStore.SaveImageToFile(PictureBytes)
                                     };

@@ -1,4 +1,9 @@
-﻿namespace FindBack.Droid.Views
+﻿using Android.OS;
+using Android.Widget;
+using FindBack.Core.Services.DataStore;
+using FindBack.Core.ViewModels;
+
+namespace FindBack.Droid.Views
 {
     using global::Android.App;
 
@@ -13,6 +18,8 @@
         {
             base.OnViewModelSet();
             SetContentView(Resource.Layout.DetailItemView);
+            var mapButton = FindViewById<Button>(Resource.Id.mapCmdButton);
+            mapButton.Enabled = ((DetailItemViewModel)ViewModel).Item.LocationKnown;
         }
     }
 }

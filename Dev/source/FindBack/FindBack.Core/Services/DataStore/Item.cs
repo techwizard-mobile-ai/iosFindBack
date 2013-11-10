@@ -15,6 +15,15 @@
         public DateTime ItemCreated { get; set; }
         public string ImagePath { get; set; }
 
+        [Ignore]
+        public bool LocationKnown {
+            get
+            {
+                return !double.IsInfinity(Latitude) && 
+                       !double.IsInfinity(Longitude);
+            }
+        }
+
         public override string ToString()
         {
             return string.Format(
