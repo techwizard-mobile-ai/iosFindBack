@@ -1,94 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent">
-  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:local="http://schemas.android.com/apk/res/findback.droid"
-      android:orientation="vertical"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent">
-    <TextView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="22dp"
-        android:text="Item name:" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="22dp"
-        local:MvxBind="Text Item.ItemName" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:text="Description:" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="22dp"
-        local:MvxBind="Text Item.Description" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:text="Created:" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="22dp"
-        local:MvxBind="Text Item.ItemCreated" />
-    <Mvx.MvxImageView
-        android:layout_width="250dp"
-        android:layout_height="200dp"
-        local:MvxBind="ImageUrl Item.ImagePath" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:text="Position:" />
-    <LinearLayout
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
+        android:layout_height="fill_parent">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_weight="1"
-            local:MvxBind="Text Item.Latitude,Converter=LatitudeCoordinate" />
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:text="Item name:" />
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_weight="1"
-            local:MvxBind="Text Item.Longitude,Converter=LongitudeCoordinate" />
-      </LinearLayout>
-      <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/mapCmdButton"
-            android:layout_width="match_parent"
+            android:textSize="22dp"
+            local:MvxBind="Text Item.ItemName" />
+        <TextView
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_action_place"
-            android:text="Map"
-            local:MvxBind="Click MapCommand"
-            android:layout_weight="1"
-            android:gravity="left|center_vertical" />
-        <Button
-            android:layout_width="match_parent"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="Description:" />
+        <TextView
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_action_discard"
-            android:text="Delete"
-            local:MvxBind="Click DeleteCommand"
-            android:layout_weight="1"
-            android:gravity="left|center_vertical" />
+            android:textSize="22dp"
+            local:MvxBind="Text Item.Description" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="Created:" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            local:MvxBind="Text Item.ItemCreated" />
+        <Mvx.MvxImageView
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            local:MvxBind="ImageUrl Item.ImagePath" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="Position:" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                local:MvxBind="Text Item.Latitude,Converter=LatitudeCoordinate" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                local:MvxBind="Text Item.Longitude,Converter=LongitudeCoordinate" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/mapCmdButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_action_place"
+                android:text="Map"
+                local:MvxBind="Click MapCommand"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_action_discard"
+                android:text="Delete"
+                local:MvxBind="Click DeleteCommand"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical" />
+        </LinearLayout>
     </LinearLayout>
-  </LinearLayout>
 </ScrollView>

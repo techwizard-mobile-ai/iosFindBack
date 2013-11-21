@@ -1,86 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent">
-  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:local="http://schemas.android.com/apk/res/findback.droid"
-      android:orientation="vertical"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent">
-    <TextView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="22dp"
-        android:text="Item name:" />
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        local:MvxBind="Text ItemName" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="22dp"
-        android:text="Description:" />
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        local:MvxBind="Text Description" />
-    <LinearLayout
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
-      <Button
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:drawableLeft="@drawable/ic_action_camera"
-          android:text="Take Picture"
-          local:MvxBind="Click TakePictureCommand"          
-          android:layout_weight="1"
-          android:gravity="left|center_vertical" />
-      <Button
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:drawableLeft="@drawable/ic_action_collection"
-          android:text="Choose Picture"
-          local:MvxBind="Click ChoosePictureCommand"
-          android:layout_weight="1"
-          android:gravity="left|center_vertical" />
+        android:layout_height="fill_parent">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:text="Item name:" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            local:MvxBind="Text ItemName" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:text="Description:" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            local:MvxBind="Text Description" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_action_camera"
+                android:text="Take Picture"
+                local:MvxBind="Click TakePictureCommand"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_action_collection"
+                android:text="Choose Picture"
+                local:MvxBind="Click ChoosePictureCommand"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical" />
+        </LinearLayout>
+        <Mvx.MvxImageView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            local:MvxBind="Bitmap PictureBytes,Converter=InMemoryImage" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:text="Position:" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_weight="1"
+                local:MvxBind="Text Latitude, Converter=LatitudeCoordinate" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_weight="1"
+                local:MvxBind="Text Longitude, Converter=LongitudeCoordinate" />
+        </LinearLayout>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_action_save"
+            android:text="Save"
+            local:MvxBind="Click SaveCommand"
+            android:gravity="left|center_vertical" />
     </LinearLayout>
-    <Mvx.MvxImageView
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        local:MvxBind="Bitmap PictureBytes,Converter=InMemoryImage" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="22dp"
-        android:text="Position:" />
-    <LinearLayout
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:textSize="18dp"
-          android:layout_weight="1"
-          local:MvxBind="Text Latitude, Converter=LatitudeCoordinate" />
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:textSize="18dp"
-          android:layout_weight="1"
-          local:MvxBind="Text Longitude, Converter=LongitudeCoordinate" />
-      </LinearLayout>
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_action_save"
-        android:text="Save"
-        local:MvxBind="Click SaveCommand"
-        android:gravity="left|center_vertical" />
-  </LinearLayout>
 </ScrollView>
