@@ -102,11 +102,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\FindBack.Core\FindBack.Core.csproj">
       <Project>{6F5DB9AB-36C3-4213-9383-530E3FBECE05}</Project>
       <Name>FindBack.Core</Name>
@@ -182,6 +177,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ic_action_place.png" />
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\splash_35_retina.png" />
+    <BundleResource Include="Resources\splash_4_retina.png" />
+    <BundleResource Include="Resources\splash.png" />
     <Content Include="zombie.png" />
   </ItemGroup>
 </Project>

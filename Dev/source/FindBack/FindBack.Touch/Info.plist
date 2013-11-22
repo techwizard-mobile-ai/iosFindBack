@@ -16,5 +16,18 @@
 	<string>3.2</string>
 	<key>NSMainNibFile</key>
 	<string></string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleVersion</key>
+	<string></string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon@2x.png</string>
+		<string>Resources/splash_35_retina.png</string>
+		<string>Resources/splash_4_retina.png</string>
+		<string>Resources/splash.png</string>
+	</array>
 </dict>
 </plist>
