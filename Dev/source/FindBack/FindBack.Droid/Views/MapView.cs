@@ -1,18 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
 using Android.OS;
-using Android.Runtime;
-using Android.Util;
-using Android.Views;
-using Android.Widget;
-using Cirrious.MvvmCross.Binding.BindingContext;
+
 using Cirrious.MvvmCross.Droid.Fragging;
 using FindBack.Core.ViewModels;
 
@@ -21,8 +11,8 @@ namespace FindBack.Droid.Views
     [Activity(Label = "Where is it?")]
     public class MapView : MvxFragmentActivity
     {
-        private Marker _marker;
-        private CenterHelper _centerHelper;
+        private Marker marker;
+        private CenterHelper centerHelper;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -36,31 +26,31 @@ namespace FindBack.Droid.Views
             var options = new MarkerOptions();
             var latLng = new LatLng(viewModel.Latitude, viewModel.Longitude);
             options.SetPosition(latLng);
-            _marker = mapFragment.Map.AddMarker(options);
-            _marker.Position = latLng;
+            this.marker = mapFragment.Map.AddMarker(options);
+            this.marker.Position = latLng;
 
-            _centerHelper = new CenterHelper(mapFragment.Map);
-            _centerHelper.Center = latLng;
+            this.centerHelper = new CenterHelper(mapFragment.Map);
+            this.centerHelper.Center = latLng;
         }
 
         public class CenterHelper
         {
-            private GoogleMap _map;
+            private readonly GoogleMap map;
 
             public CenterHelper(GoogleMap map)
             {
-                _map = map;
+                this.map = map;
             }
 
             public LatLng Center
             {
-                get { return _map.Projection.VisibleRegion.LatLngBounds.Center; }
+                get { return this.map.Projection.VisibleRegion.LatLngBounds.Center; }
                 set
                 {
                     var center = CameraUpdateFactory.NewLatLngZoom(value, 18f);
-                    _map.MoveCamera(center);
-                    _map.MyLocationEnabled = true;
-                    _map.MapType = GoogleMap.MapTypeHybrid;
+                    this.map.MoveCamera(center);
+                    this.map.MyLocationEnabled = true;
+                    this.map.MapType = GoogleMap.MapTypeHybrid;
                 }
             }
         }
