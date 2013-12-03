@@ -17,11 +17,11 @@
 	<key>NSMainNibFile</key>
 	<string></string>
 	<key>CFBundleDisplayName</key>
-	<string></string>
+	<string>FindBack</string>
 	<key>CFBundleIdentifier</key>
-	<string></string>
+	<string>FindBack</string>
 	<key>CFBundleVersion</key>
-	<string></string>
+	<string>1.0.0</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon@2x.png</string>
