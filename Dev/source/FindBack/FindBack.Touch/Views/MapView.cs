@@ -38,34 +38,31 @@ namespace FindBack.Touch.Views
 
         public class ItemAnnotation : MKAnnotation
         {
-            private readonly MapViewModel _zombie;
-
-            public ItemAnnotation(MapViewModel zombie)
+            public ItemAnnotation(MapViewModel mapViewModel)
             {
-                _zombie = zombie;
-                Coordinate = new CLLocationCoordinate2D(zombie.Latitude, zombie.Longitude);
+                Coordinate = new CLLocationCoordinate2D(mapViewModel.Latitude, mapViewModel.Longitude);
             }
 
-            public override CLLocationCoordinate2D Coordinate { get; set; }
+            public override sealed CLLocationCoordinate2D Coordinate { get; set; }
         }
 
         public class MyDelegate : MKMapViewDelegate
         {
             public override MKAnnotationView GetViewForAnnotation(MKMapView mapView, NSObject annotation)
             {
-                var pin = (MKAnnotationView)mapView.DequeueReusableAnnotation("zombie");
+                var pin = mapView.DequeueReusableAnnotation("pin");
                 if (pin == null)
                 {
-                    pin = new MKAnnotationView(annotation, "zombie");
-                    pin.Image = UIImage.FromFile("ic_action_place.png");
-                    pin.CenterOffset = new PointF(0, -30);
+                    pin = new MKAnnotationView(annotation, "pin")
+                          {
+                              Image = UIImage.FromFile("ic_action_place.png"),
+                              CenterOffset = new PointF(0, -30)
+                          };
                 }
                 else
                 {
                     pin.Annotation = annotation;
                 }
-
-                var zombieAnnotation = (ItemAnnotation)annotation;
 
                 return pin;
             }
