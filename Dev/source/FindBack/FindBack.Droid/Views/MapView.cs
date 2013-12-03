@@ -36,7 +36,6 @@ namespace FindBack.Droid.Views
             var options = new MarkerOptions();
             var latLng = new LatLng(viewModel.Latitude, viewModel.Longitude);
             options.SetPosition(latLng);
-            //options.SetTitle("Keith");
             _marker = mapFragment.Map.AddMarker(options);
             _marker.Position = latLng;
 
@@ -58,7 +57,7 @@ namespace FindBack.Droid.Views
                 get { return _map.Projection.VisibleRegion.LatLngBounds.Center; }
                 set
                 {
-                    var center = CameraUpdateFactory.NewLatLngZoom(value, 12f);
+                    var center = CameraUpdateFactory.NewLatLngZoom(value, 18f);
                     _map.MoveCamera(center);
                     _map.MyLocationEnabled = true;
                     _map.MapType = GoogleMap.MapTypeHybrid;

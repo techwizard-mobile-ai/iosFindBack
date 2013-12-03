@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="findback.droid">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="findback.droid" android:versionCode="1" android:versionName="0.1a">
   <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="14" />
-  <application android:label="FindBack">
+  <application android:label="FindBack" android:icon="@drawable/ic_launcher">
     <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyA42YxmW8zjdNaZ0TryNzkFoiDt6oNoRm4" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
   </application>
